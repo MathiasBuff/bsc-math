@@ -1,0 +1,172 @@
+% !TeX spellcheck = fr_CH
+
+% TODO: Replace scan images with clean text where possible
+
+\documentclass[a4paper, 10pt]{report}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amssymb, amsfonts}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{graphicx}
+
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=35mm,
+	bottom=25mm,
+	headsep=5mm,
+	headheight=20mm,
+}
+
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\begin{document}
+	
+	\renewcommand{\headrule}{
+		\color{lightgray} \par\noindent\rule{\textwidth}{2pt}
+	}	
+	\pagestyle{fancy}
+	\fancyhf{}
+	
+	\fancyhead[L]{\small \slshape Automne 2024}
+	\fancyhead[C]{\Large \bfseries Analyse I - Série 01}
+	\fancyhead[R]{\small Buff Mathias}
+	\fancyfoot[L]{
+		\small Source files can be found at:
+		\href{https://github.com/MathiasBuff/bsc-math}
+		{github.com/MathiasBuff/bsc-math}
+	}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 1.} Quelle est la contraposée des implications
+	suivantes ? Même question avec la négation.
+	%
+	\begin{enumerate}[label=(\roman*)]
+		\item Si $x > 0$, alors $f(x) \leq 0$.
+		\item Si $ab = 0$, alors $(a = 0$ ou $b = 0)$.
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 2.} Expliquer verbalement ce que signifient les
+	assertions suivantes et écrire leur négation.
+	%
+	\begin{enumerate}[label=(\roman*)]
+		\item $\forall x \in \mathbb{R}, x^2 < 0$.
+		%
+		\item $\forall x,y \in \mathbb{Q}, [x < y \implies
+			\exists z \in \mathbb{Q}, x < z < y]$.
+		%
+		\item $\forall A \in \mathbb{R}, \exists n \in \mathbb{N},
+			n > A$.
+		%
+		\item $\forall n \in \mathbb{N}, \exists p \geq n,
+			\forall r \mathbb{N}, \forall s \mathbb{N},
+			[p = rs \implies (r = 1) \lor (s = 1)]$.
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 3.} Écrire la négation des assertions suivantes.
+	%
+	\begin{enumerate}[label=(\roman*)]
+		\item $\forall x,y \in E, xy = yx$.
+		%
+		\item $\exists x \in E, \forall y \in E, xy = yx$.
+		%
+		\item $\forall a,b \in A, [ab = 0 \implies
+			(a = 0) \lor (b = 0)]$.
+		%
+		\item $\forall x \in \mathbb{R}, \forall y \in \mathbb{R},
+			[x < y \implies f(x) < f(y)]$ (où $f$ est une fonction
+			de $\mathbb{R}$ dans $\mathbb{R}$).
+		%
+		\item $\forall \epsilon > 0, \exists N \in \mathbb{N},
+			[n \geq N \implies \abs{u_n - \ell} < \epsilon]$
+			(où $(u_n)$ est une suite réelle et $\ell \in \mathbb{R}$).
+		%
+		\item $\exists \ell \in \mathbb{R}, \forall \epsilon > 0,
+			\exists N \in \mathbb{N}, [n \geq N \implies
+			\abs{u_n - \ell} \ \epsilon]$
+			(où $(u_n)$ est une suite réelle).
+		%
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 4.} Soient $E, F$ et $G$ trois ensembles. Montrer
+	que	si $E \subset F$ et $F \subset G$, alors $E \subset G$.
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 5.} Soient $A, B$ et $C$ trois ensembles.
+	%
+	\begin{enumerate}[label=(\roman*)]
+		\item Montrer que $A = B \iff (A \cap B = A \cup B)$.
+		%
+		\item Montrer que $A = B \iff
+			(\mathcal{P}(A) = \mathcal{P}(B))$.
+		%
+		\item Montrer que $(A \cup B = A \cup C) \land
+			(A \cap B = A \cap C) \implies (B = C)$.
+		%
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 6.} Dites si les assertions suivantes sont
+	VRAIES ou FAUSSES.
+	%
+	\begin{enumerate}[label=(\roman*)]
+		\item $\mathbb{N} \in \mathbb{Z}$.
+		%
+		\item $\mathbb{N} \subset \mathbb{Z}$.
+		%
+		\item $\emptyset \in \mathbb{N}$.
+		%
+		\item $\emptyset \subset \mathbb{N}$.
+		%
+		\item $\{1,2\} \in \mathcal{P}(\{1,2,3\})$.
+		%
+		\item $\{1,2\} \subset \mathcal{P}(\{1,2,3\})$.
+		%
+		\item $\{\{1\}\} \subset \mathcal{P}(\{1,2,3\})$.
+		%
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 7.} Considérons les sous-ensembles de $\mathbb{N}$
+	%
+	\[
+		A = \{1,2,3,4,5,6,7\}, \quad B = \{1,3,5,7\}, \quad
+			C = \{2,4,6\}, \quad D = \{3,6\}.
+	\]
+	%
+	\begin{enumerate}[label=(\roman*)]
+		\item Déterminer $B \cap D$ et $C \cap D$.
+		%
+		\item Déterminer $B \cup D$ et $C \cup D$. L'une de
+		ces deux unions est-elle disjointe ?
+		%
+		\item Déterminer les complémentaires dans $A$ de $B, C$ et $D$.
+		%
+	\end{enumerate}
+	
+\end{document}
