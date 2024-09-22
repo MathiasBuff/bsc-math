@@ -36,9 +36,11 @@
 
 \begin{document}
 	
-	\renewcommand{\headrule}{
-		\color{lightgray} \par\noindent\rule{\textwidth}{2pt}
-	}	
+	\renewcommand{\headrule}{%
+		\vspace{-4pt}\hrulefill
+		\raisebox{-6.8pt}{\ \includegraphics[height=5mm]{../../icon.png}}
+		\hrulefill
+		}	
 	\pagestyle{fancy}
 	\fancyhf{}
 	
