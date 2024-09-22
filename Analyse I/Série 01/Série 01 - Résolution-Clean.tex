@@ -66,8 +66,18 @@
 		\item Si $ab = 0$, alors $(a = 0$ ou $b = 0)$.
 	\end{enumerate}
 	
-	\includegraphics{ex01.png}
-	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			\begin{enumerate}[label=(\roman*)]
+				\item Contraposée : Si $f(x) > 0$, alors $x \leq 0$.\\
+					Négation : $(x > 0)$ et $(f(x) >0)$.
+				\item Contraposée : Si $(a \neq 0$ et $b \neq 0)$, alors $ab \neq 0$.\\
+				Négation : $(ab = 0)$ et $(a \neq 0$ et $b \neq 0)$.
+			\end{enumerate}
+		\end{minipage}
+	}
+		
 	\vspace{5mm}
 	\noindent
 	\textbf{Exercice 2.} Expliquer verbalement ce que signifient les
@@ -87,7 +97,32 @@
 			[p = rs \implies (r = 1) \lor (s = 1)]$.
 	\end{enumerate}
 	
-	\includegraphics{ex02.png}
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			\begin{enumerate}[label=(\roman*)]
+				\item "Le carré d'un nombre réel est négatif."\\
+				Négation : $\exists x \in \mathbb{R}, x^2 \geq 0$.
+				%
+				\item "On peut trouver un nombre rationnel entre
+				chaque paire de nombres rationnels distincts."\\
+				\textit{("$\mathbb{Q}$ est dense." ?)}\\
+				Négation : $\exists x,y \in \mathbb{Q},
+					[x < y \land (\forall z \in \mathbb{Q},
+					z < x \land y < z)]$.
+				%
+				\item "Il existe des entiers naturels arbitrairement
+				grands."\\
+				Négation : $\exists A \in \mathbb{R},
+					\forall n \in \mathbb{N}, n \leq A$
+				%
+				\item "Il existe une infinité de nombres premiers."\\
+				Négation : $\exists n \in \mathbb{N}, \forall p \geq n,
+					\exists r \in \mathbb{N}, \exists s \in \mathbb{N},
+					[(p = rs) \land (r \neq 1) \land (s \neq 1)]$
+			\end{enumerate}
+		\end{minipage}
+	}
 	
 	\vspace{5mm}
 	\noindent
@@ -111,21 +146,112 @@
 		%
 		\item $\exists \ell \in \mathbb{R}, \forall \epsilon > 0,
 			\exists N \in \mathbb{N}, [n \geq N \implies
-			\abs{u_n - \ell} \ \epsilon]$
+			\abs{u_n - \ell} < \epsilon]$
 			(où $(u_n)$ est une suite réelle).
 		%
 	\end{enumerate}
 	
-	\includegraphics{ex03.png}
-	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			\begin{enumerate}[label=(\roman*)]
+				\item $\neg[
+				\forall x,y \in E,
+				xy = yx
+				]
+				\iff
+				\exists x,y \in E,
+				xy \neq yx$.
+				%
+				\item $\neg[
+				\exists x \in E,
+				\forall y \in E,
+				xy = yx
+				]
+				\iff
+				\forall x \in E,
+				\exists y \in E,
+				xy \neq yx
+				$.
+				%
+				\item $\neg[
+				\forall a,b \in A,
+				[ab = 0 \implies (a = 0) \lor (b = 0)]
+				]
+				\iff
+				\exists a,b \in A,
+				[ab = 0 \land (a \neq 0) \land (b \neq 0)]
+				$.
+				%
+				\item $\neg[
+				\forall x \in \mathbb{R},
+				\forall y \in \mathbb{R},
+				[x < y \implies f(x) < f(y)]
+				]
+				\iff
+				\exists x \in \mathbb{R},
+				\exists y \in \mathbb{R},
+				[x < y \land f(x) \geq f(y)]
+				$
+				%
+				\item $\neg[
+				\forall \epsilon > 0,
+				\exists N \in \mathbb{N},
+				[n \geq N \implies \abs{u_n - \ell} < \epsilon]
+				]
+				\iff
+				\exists \epsilon > 0,
+				\forall N \in \mathbb{N},
+				[n \geq N \land \abs{u_n - \ell} \geq \epsilon]
+				$
+				%
+				\item $\neg[
+				\exists \ell \in \mathbb{R},
+				\forall \epsilon > 0,
+				\exists N \in \mathbb{N},
+				[n \geq N \implies \abs{u_n - \ell} < \epsilon]
+				]\\
+				\iff
+				\forall \ell \in \mathbb{R},
+				\exists \epsilon > 0,
+				\forall N \in \mathbb{N},
+				[n \geq N \land \abs{u_n - \ell} \geq \epsilon]
+				$
+				%
+			\end{enumerate}
+		\end{minipage}
+	}
+		
 	\vspace{5mm}
 	\noindent
 	\textbf{Exercice 4.} Soient $E, F$ et $G$ trois ensembles. Montrer
 	que	si $E \subset F$ et $F \subset G$, alors $E \subset G$.
 	
-	\includegraphics{ex04.png}
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			Soit $x \in E$. Puisque $E \subset F$, alors $x \in F$.
+			De plus, comme $F \subset G, x \in G$.\\
+			Donc, $[\forall x \in E, 
+			(E \subset F) \land (F \subset G)
+			\implies
+			x \in G]
+			\iff
+			E \subset G$.
+		\end{minipage}
+	}
+		
+	\newpage
 	
-	\vspace{5mm}
+	\fancyhf{}
+	\renewcommand{\headrule}
+	{\rule{\textwidth}{0pt}}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
 	\noindent
 	\textbf{Exercice 5.} Soient $A, B$ et $C$ trois ensembles.
 	%
@@ -134,6 +260,7 @@
 		
 		\includegraphics{ex05-1.png}
 		
+		\newpage
 		\item Montrer que $A = B \iff
 			(\mathcal{P}(A) = \mathcal{P}(B))$.
 		
@@ -146,7 +273,8 @@
 		
 	\end{enumerate}
 	
-	\vspace{5mm}
+	\newpage
+	
 	\noindent
 	\textbf{Exercice 6.} Dites si les assertions suivantes sont
 	VRAIES ou FAUSSES.
