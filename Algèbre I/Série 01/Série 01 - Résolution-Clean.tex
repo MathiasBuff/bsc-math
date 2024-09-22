@@ -11,11 +11,14 @@
 
 \usepackage{hyperref}
 \usepackage{geometry}
+
 \usepackage{xcolor}
+\usepackage{graphicx}
+
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+
 \usepackage{enumitem}
-\usepackage{graphicx}
 
 \geometry{
 	a4paper,
@@ -26,6 +29,11 @@
 	headsep=5mm,
 	headheight=20mm,
 	}
+	
+
+\definecolor{solution}{HTML}{E5E4E2}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
 
 \begin{document}
 		
@@ -145,7 +153,66 @@
 		où le $+$ et le $\cdot$ du côté droit dénotent l'addition
 		et la multiplication usuelles dans $\mathbb{R}$, forme un
 		espace vectoriel sur $\mathbb{R}$.
-			
+		
+		\colorbox{solution}
+		{
+			\begin{minipage}{0.9\textwidth}
+				Vérifions pour $E = \mathcal{F}(\mathbb{R}, \mathbb{R})$
+				les axiomes de l'addition :\\
+				Soient $f, g, h \in E$
+				\begin{itemize}
+					\item Associativité : 
+						\[
+							\begin{aligned}
+								(f + (g + h))(x)
+								&= f(x) + (g + h)(x)
+								= f(x) + g(x) + h(x)
+								= (f + g)(x) + h(x)\\
+								&= ((f + g) + h)(x)
+							\end{aligned}
+						\]
+					\item Commutativité :
+						\[
+							(f + g)(x)
+							= f(x) + g(x)
+							= g(x) + f(x)
+							= (g + f)(x)
+						\]
+					\item L'élément neutre additif $0_E$ est la fonction
+					constante $f(x) = 0$.
+					\item L'inverse additif est la fonction
+					$-f := (-1) \cdot f$
+				\end{itemize}
+				
+				\vspace{5mm}
+				Vérifions ensuite les axiomes de la multiplication par
+				un scalaire:\\
+				Soient $f, g \in E$ et $\lambda, \mu \in \mathbb{R}$
+				\begin{itemize}
+					\item Associativité : 
+					\[
+						((\lambda \cdot \mu) \cdot f)(x)
+						= (\lambda \cdot \mu) \cdot f(x)
+						= \lambda \cdot (\mu \cdot f(x))
+						= \lambda \cdot (\mu \cdot f)(x)
+					\]
+					\item Distributivité :
+					\[
+					\begin{aligned}
+						(\lambda \cdot (f + g)(x)
+						&= \lambda \cdot (f + g)(x)
+						= \lambda \cdot (f(x) + g(x))
+						= \lambda \cdot f(x) + \lambda \cdot g(x)\\
+						&= ((\lambda \cdot f) + (\lambda \cdot g))(x)
+					\end{aligned}
+					\]
+					\item Élément neutre : $(1 \cdot f)(x) =
+						1 \cdot (f(x)) = f(x)$.
+					$-f := (-1) \cdot f$
+				\end{itemize}
+			\end{minipage}
+		}
+		
 		\item Soit $\mathbb{R}^{\mathbb{N}}$ l'ensemble de toutes
 		les suites de scalaires
 		$(u_n)_{n \in \mathbb{N}}, u_n \in \mathbb{R}$, qui peut
@@ -165,9 +232,72 @@
 		\]
 		%
 		forme un espace vectoriel sur $\mathbb{R}$.
+		
+		\colorbox{solution}
+		{
+			\begin{minipage}{0.9\textwidth}
+				Vérifions pour $E = \mathbb{R}^{\mathbb{N}}$
+				les axiomes de l'addition :\\
+				Soient $u, v, w \in E$
+				\begin{itemize}
+					\item Associativité : 
+					\[
+					\begin{aligned}
+						(u_n)_{n \in \mathbb{N}} + (v_n + w_n)_{n \in \mathbb{N}}
+						&= (u_n + (v_n + w_n))_{n \in \mathbb{N}}
+						= (u_n + v_n + w_n)_{n \in \mathbb{N}}\\
+						&= ((u_n + v_n) + w_n)_{n \in \mathbb{N}}
+						= (u_n + v_n)_{n \in \mathbb{N}} + (w_n)_{n \in \mathbb{N}}
+					\end{aligned}
+					\]
+					\item Commutativité :
+					\[
+						(u_n)_{n \in \mathbb{N}} + (v_n)_{n \in \mathbb{N}}
+						= (u_n + v_n)_{n \in \mathbb{N}}
+						= (v_n + u_n)_{n \in \mathbb{N}}
+						= (v_n)_{n \in \mathbb{N}} + (u_n)_{n \in \mathbb{N}}
+					\]
+					\item L'élément neutre additif $0_E$ est la suite
+					constante $u_n = 0 \quad \forall n \in \mathbb{N}$.
+					\item L'inverse additif est la suite
+					$-(u_n)_{n \in \mathbb{N}} := (-1) \cdot (u_n)_{n \in \mathbb{N}}$
+				\end{itemize}
+				
+				\vspace{5mm}
+				Vérifions ensuite les axiomes de la multiplication par
+				un scalaire:\\
+				Soient $u, v \in E$ et $\lambda, \mu \in \mathbb{R}$
+				\begin{itemize}
+					\item Associativité : 
+					\[
+					\begin{aligned}
+						(\lambda \cdot \mu) \cdot (u_n)_{n \in \mathbb{N}}
+						&= ((\lambda \cdot \mu) \cdot u_n)_{n \in \mathbb{N}}
+						= (\lambda \cdot \mu \cdot u_n)_{n \in \mathbb{N}}
+						= (\lambda \cdot (\mu \cdot u_n))_{n \in \mathbb{N}}\\
+						&= \lambda \cdot (\mu \cdot u_n)_{n \in \mathbb{N}}
+					\end{aligned}
+					\]
+					\item Distributivité :
+					\[
+					\begin{aligned}
+						\lambda \cdot (u_n + v_n)_{n \in \mathbb{N}}
+						&= (\lambda \cdot (u_n + v_n))_{n \in \mathbb{N}}
+						= (\lambda \cdot u_n
+							+ \lambda \cdot v_n)_{n \in \mathbb{N}}\\
+						&= (\lambda \cdot u_n)_{n \in \mathbb{N}}
+							+ (\lambda \cdot v_n)_{n \in \mathbb{N}}
+					\end{aligned}
+					\]
+					\item Élément neutre :
+					$1 \cdot (u_n)_{n \in \mathbb{N}}
+					= (1 \cdot u_n)_{n \in \mathbb{N}}
+					= (u_n)_{n \in \mathbb{N}}$.
+				\end{itemize}
+			\end{minipage}
+		}
+		
 	\end{enumerate}
-	
-	\includegraphics{ex03.png}
 
 	\vspace{5mm}
 	\noindent
@@ -227,9 +357,14 @@
 			\end{pmatrix}
 			, \quad a, b \in \mathbb{R} \bigg\}$
 		%
-		\item $E = \mathbb{R}^3, F = \{\lambda u + \mu v \mid \lambda \in \mathbb{R}, \mu \in \mathbb{R}\}$, où $u, v \in \mathbb{R}^3$ sont fixés.
+		\item $E = \mathbb{R}^3, F = \{\lambda u + \mu v \mid
+			\lambda \in \mathbb{R}, \mu \in \mathbb{R}\}$,
+		où $u, v \in \mathbb{R}^3$ sont fixés.
 		%
-		\item $E = \{f : [0, 2\pi] \rightarrow \mathbb{R} \mid f(0) = f(2\pi)\}, F = \{f : [0, 2\pi] \rightarrow \mathbb{R} \mid f(0) = f(2\pi) = a\}$ où $a \in \mathbb{R}$ est fixé.
+		\item $E = \{f : [0, 2\pi] \rightarrow \mathbb{R} \mid
+			f(0) = f(2\pi)\}, F = \{f : [0, 2\pi] \rightarrow
+			\mathbb{R} \mid f(0) = f(2\pi) = a\}$,
+		où $a \in \mathbb{R}$ est fixé.
 		%
 		\item $E = \mathcal{F}(\mathbb{R}, \mathbb{R})$, et
 			\begin{enumerate}[label=(\alph*)]
