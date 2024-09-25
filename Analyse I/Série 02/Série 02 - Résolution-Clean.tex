@@ -1,4 +1,4 @@
-% !TeX spellcheck = fr_CH
+% !TeX spellcheck = fr_FR
 
 % TODO: Replace scan images with clean text where possible
 
@@ -45,7 +45,7 @@
 	\fancyhf{}
 	
 	\fancyhead[L]{\small \slshape Automne 2024}
-	\fancyhead[C]{\Large \bfseries Analyse I - Série 01}
+	\fancyhead[C]{\Large \bfseries Analyse I - Série 02}
 	\fancyhead[R]{\small Buff Mathias}
 	\fancyfoot[L]{
 		\small Source files available at:
@@ -59,32 +59,238 @@
 	}
 	
 	\noindent
-	\textbf{Exercice 1.} 
+	\textbf{Exercice 1.} Écrire la négation des assertions suivantes.
 	
-	\indent sdadasff
-	
-	\noindent
-	\textbf{Exercice 2.}
-	
-	\indent pijrtoinrrttfvd
+	\begin{enumerate}[label=(\roman*)]
+		\item $\exists x \in \mathbb{R},
+			\exists \delta > 0,
+			\forall y \in \mathbb{R},
+			[\abs{x - y} \leq \delta \implies f(x) \geq f(y)]$\\
+		(où $f$ est une fonction de $\mathbb{R}$ dans $\mathbb{R}$)
+		%
+		\item $\forall x \in \mathbb{R},
+		\forall \epsilon > 0,
+		\exists \delta > 0,
+		\forall y \in \mathbb{R},
+		[\abs{x - y} < \delta \implies \abs{f(x) - f(y)} \leq \epsilon]$\\
+		(où $f$ est une fonction de $\mathbb{R}$ dans $\mathbb{R}$)
+		%
+		\item $\forall \epsilon > 0,
+			\exists N \in \mathbb{N},
+			\forall x \in \mathbb{R},
+			\forall n \geq N,
+			[n \geq N \implies \abs{f_n(x) - f(x)} \leq \epsilon]$\\
+		(où $f$ est une fonction de $\mathbb{R}$ dans $\mathbb{R}$)
+		%
+		\item $\forall E \subset \mathbb{N},
+			[E \neq \emptyset \implies (\exists n \in E,
+				\forall m \in E, m \geq n)]$
+		%
+		\item $\forall E \subset \mathbb{R},
+			[E \neq \emptyset \implies \exists a \in \mathbb{R},
+				((\forall b \in E : b \leq a)
+				\text{et}
+				(\forall \epsilon > 0,
+					\exists b \in E : b \geq a - \epsilon))]$
+	\end{enumerate}
 	
 	\vspace{5mm}
 	\noindent
-	\textbf{Exercice 3.} 
+	\textbf{Exercice 2.} (Différence symétrique). L'opération
+	$\bigtriangleup$ est définie sur les ensembles $A, B \subset E$
+	par $A \bigtriangleup B = (A \cap B^C) \cup (B \cap A^C)$.
 	
-	\indent asdsdasdsad
+	\begin{enumerate}[label=(\roman*)]
+		\item Montrer que $A \bigtriangleup B =
+			(A \cup B) \setminus (A \cap B)$
+		%
+		\item Vérifier que $A \bigtriangleup B = 0 \implies (A = B)$
+	\end{enumerate}
 	
 	\vspace{5mm}
 	\noindent
-	\textbf{Exercice 4.} 
+	\textbf{Exercice 3.} Expliquer verbalement ce que signifient les
+	assertions suivantes et écrire leur négation.
 	
-	\indent asdds
+	\begin{enumerate}[label=(\roman*)]
+		\item $\forall n \geq 0, u_n < u_{n+1}$
+		(où $(u_n)$ est une suite réelle)
+		%
+		\item Soit $f : E \to \mathbb{R}$ une fonction :
+		\begin{enumerate}[label=(\alph*)]
+			\item $\exists C \in \mathbb{R},
+				\forall x \in E,
+				f(x) = C$
+			%
+			\item $\exists x \in E,
+				[f(x) = 0 \implies x = 0]$
+			%
+			\item $\forall y \in \mathbb{R},
+				\exists x \in E,
+				f(x) = y$
+			%
+			\item $\forall x \in E,
+				\forall y \in E,
+				[f(x) = f(y) \implies x = y]$
+			%
+			\item $\exists A \in \mathbb{R},
+				\forall x \in E,
+				f(x) \leq A$
+		\end{enumerate}
+	\end{enumerate}
 	
 	\vspace{5mm}
 	\noindent
-	\textbf{Exercice 5.}
+	\textbf{Exercice 4.} Soit $f : E \to \mathbb{R}$ une fonction.
+	Exprimer à l'aide de quantificateurs les assertions suivantes.
 	
-	\indent asd
+	\begin{enumerate}[label=(\roman*)]
+		\item La fonction $f$ s'annule.
+		\item La fonction $f$ est la fonction nulle.
+		\item $f$ n'est pas une fonction constante.
+		\item $f$ ne prend jamais deux fois la même valeur.
+		\item La fonction $f$ admet un minimum.
+		\item $f$ prend des valeurs arbitrairement grandes.
+		\item $f$ ne peut s'annuler qu'une seule fois.
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 5.} Soient $E$ et $F$ deux ensembles et
+	$A(x, y)$ des assertions indexées par $(x, y) \in E \times F$.
+	
+	\begin{enumerate}[label=(\roman*)]
+		\item Montrer que $\forall x \in E, \forall y \in F, A(x, y)
+			\iff \forall y \in F, \forall x \in E, A(x, y)$.
+		\item Montrer que $\exists x \in E, \exists y \in F, A(x, y)
+			\iff \exists y \in F, \exists x \in E, A(x, y)$.
+		\item Montrer en donnant un exemple que $\exists x \in E,
+			\forall y \in F, A(x, y)$ n'est pas nécessairement
+			équivalent à $\forall y \in F, \exists x \in E, A(x, y)$.
+	\end{enumerate}
+	%
+	On dira que l'on peut échanger les quantificateurs $\forall$
+	adjacents (ou les $\exists$ adjacents), mais que l'on ne peut
+	pas échanger les quantificateurs $\forall$ et $\exists$. 
+	
+	\newpage
+	
+	\fancyhf{}
+	\renewcommand{\headrule}
+	{\rule{\textwidth}{0pt}}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+	\noindent
+	\textbf{Exercice 6.} (Fonctions caractéristiques $\chi_A$).
+	Soient $E$ un ensemble et $A \subset E$. La fonction
+	caractéristique de A est définie par $\chi_A : E \to \{0, 1\}$ et
+	\[
+		\chi_A : x \mapsto \left\{
+		\begin{aligned}
+			&1 & &\text{si}\ x \in A\\
+			&0 & &\text{sinon.}
+		\end{aligned}
+		\right.
+	\]
+	
+	\begin{enumerate}[label=(\roman*)]
+		\item Montrer que deux ensembles sont égaux si et seulement
+		si ils ont la même fonction caractéristique.
+		%
+		\item Que peut-on dire sur $A$ et $B$ si
+		$\chi_A(x) \leq \chi_B(x)$ pour tout $x \in E$ ?
+		%
+		\item Montrer que $\chi_{A \cap B} = \chi_A \chi_B$,
+		$\chi_{A^C} = 1 - \chi_A$ et
+		$\chi_{A \cup B} = \chi_A + \chi_B - \chi_A \chi_B$.
+		%
+		\item Montrer que les formules de De Morgan pour $(A \cup B)^C$
+		et $(A \cap B)^C$ en utilisant les fonctions caractéristiques.
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 7.} Soit $f: E \to F$ une fonction bijective.
+	Démontrer les propriétés suivantes énoncées mais pas démontrées
+	en classe (Proposition 1.23).
+	
+	\begin{enumerate}[label=(\roman*)]
+		\item $(f^{-1})^{-1} = f, \quad
+			f^{-1} \circ f = I_E, \quad
+			f \circ f^{-1} = I_F$.
+		%
+		\item (unicité de l'inverse) Si $g : F \to E$ tel que
+		$g \circ f = I_E$ et $f \circ g = I_F$, alors $g = f^{-1}$.
+		%
+		\item (composition des inverses) Soit $g : F \to G$ une autre
+		fonction bijective. Alors
+		$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$.
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 8.} Soit $f : E \to F$ une fonction.
+	
+	\begin{enumerate}[label=(\roman*)]
+		\item Soit $B \subset F$. Dans le cas où $f$ est bijective,
+		montrer que l'image réciproque $f^{-1}(B)$ de $B$ est égale
+		à l'image directe de $B$ par la fonction inverse $f^{-1}$.
+		(Notons que l'image réciproque existe pour tout $f$, tandis
+		que la fonction inverse uniquement si $f$ est bijective.)
+		%
+		\item Montrer que pour tout $A, B \subset F$ on a
+		\[
+			f^{-1}(A \cup B) = f^{-1}(A) \cup f^{-1}(B), \quad
+			f^{-1}(A \cap B) = f^{-1}(A) \cap f^{-1}(B)
+		\]
+		%
+		\item Montrer que pour tout $A, B \subset F$ on a
+		\[
+		f(A \cup B) = f(A) \cup f(B), \quad
+		f(A \cap B) \subset f(A) \cap f(B)
+		\]
+		%
+		\item Montrer qu'en général $f(A \cap B) = f(A) \cap f(B)$
+		est fausse.\\
+		Montrer aussi qu'elle est vraie si $f$ est injective.
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 9.}
+	
+	\begin{enumerate}[label=(\roman*)]
+		\item Soit $E = \mathbb{R}^{\mathbb{Z}}$. Les éléments de $E$
+		sont des familles $x = (x_i)_{i \in \mathbb{Z}}$ indexées par
+		$\mathbb{Z}$. Définissons la fonction $f : E \to E$ par
+		\[
+		f : (x_i)_{i \in \mathbb{Z}} \mapsto (x_{i+1})_{i \in \mathbb{Z}}
+		\]
+		Montrer que $f$ est bijective et déterminer $f^{-1}$.
+		%
+		\item Soit $E = \mathbb{R}^{\mathbb{N}}$. Les éléments de $E$
+		sont des familles $x = (x_i)_{i \in \mathbb{N}}$ indexées par
+		$\mathbb{N}$ (aussi appelées suites).
+		Définissons la fonction $f : E \to E$ par
+		\[
+		f : (x_i)_{i \in \mathbb{N}} \mapsto (x_{i+1})_{i \in \mathbb{N}}
+		\]
+		Est-ce que $f$ est injective ? Surjective ?
+		%
+		\item Soit $f$ la fonction de (ii). Définissons les ensembles
+		$A, B \subset \mathbb{R}^{\mathbb{N}}$ par
+		\[
+		A = \{(x_i)_{i \in \mathbb{N}} : x_0 \in [0,1], x_1 \leq 0\},
+		\quad
+		B = \{(x_i)_{i \in \mathbb{N}} : \exists i \in \mathbb{N}, x_i \geq 0\}
+		\]
+		Déterminer les images directes $f(A)$ et $f(B)$ ainsi que les
+		images réciproques $f^{-1}(A)$ et $f^{-1}(B)$.
+	\end{enumerate}
 	
 	\newpage
 	
