@@ -1,4 +1,4 @@
-% !TeX spellcheck = fr_CH
+% !TeX spellcheck = fr_FR
 
 % TODO: Replace scan images with clean text where possible
 
@@ -45,7 +45,7 @@
 	\fancyhf{}
 	
 	\fancyhead[L]{\small \slshape Automne 2024}
-	\fancyhead[C]{\Large \bfseries Algèbre I - Série 01}
+	\fancyhead[C]{\Large \bfseries Algèbre I - Série 02}
 	\fancyhead[R]{\small Buff Mathias}
 	\fancyfoot[L]{
 		\small Source files available at:
@@ -59,32 +59,114 @@
 	}
 	
 	\noindent
-	\textbf{Exercice 1.} 
+	\textbf{Exercice 1.} (Nombres complexes)
 	
-	\indent sdadasff
-	
-	\noindent
-	\textbf{Exercice 2.}
-	
-	\indent pijrtoinrrttfvd
+	\begin{enumerate}[label=\arabic*.]
+		\item Écrire en forme algébrique $z = a + ib$ avec
+		$a, b \in \mathbb{R}$ et $i^2 = -1$ les nombres complexes
+		suivants :
+		%
+		\[
+			\frac{1}{i(3 + 2i)^2}, \quad
+			\frac{(\sqrt{3} + \sqrt{2}i)^3}{\sqrt{2} - \sqrt{3}i}, \quad
+			\frac{1}{\sqrt{3} - i}.
+		\]
+		%
+		\item Calculer le module des nombres complexes suivants :
+		%
+		\[
+			-3i, \quad
+			\sqrt{3} + i, \quad
+			3i(2 + i).
+		\]
+		%
+		\item Résoudre les équations suivantes d'inconnue
+		$z \in \mathbb{C}$ avec la formule habituelle pour résoudre
+		les équations générales du second degré. Vérifier les
+		solutions trouvées.
+		%
+		\begin{itemize}
+			\item $z^2 + 2z + 3 = 0$,
+			\item $z^2 + 2iz - 3 = 0$.
+		\end{itemize}
+		%
+		\item Résoudre l'équation suivante d'inconnue
+		$z \in \mathbb{C}$ en remplaçant $z = a + ib$
+		%
+		\[
+			z + 3i + Re(z)(i + (Im(z))^2) = 0
+		\]
+		%
+		\item Calculer le conjugué en forme algébrique $z = a + ib$
+		des nombres complexes suivants :
+		%
+		\[
+			\frac{5 + 2i}{1 - i}, \quad
+			\frac{\sqrt{2} - i}{2 + i}, \quad
+			\frac{2 - i}{i}.
+		\]
+		%
+		\item Montrer la proposition suivante :
+		$\forall z \in \mathbb{C}$ :
+			%
+		\begin{itemize}
+			\item si $z \neq 0 : \abs{z^{-1}} = \abs{z}^{-1}$ ;
+			\item $z \in \mathbb{R} \iff \bar{z} = z$ ;
+			\item $z \in i\mathbb{R} \iff \bar{z} = -z$.
+		\end{itemize}
+		%
+	\end{enumerate}
 	
 	\vspace{5mm}
 	\noindent
-	\textbf{Exercice 3.} 
+	\textbf{Exercice 2.} (Coordonnées polaires)
 	
-	\indent asdsdasdsad
+	\begin{enumerate}[label=(\alph*)]
+		\item Montrer que
+		\[
+			z_1z_2 = r_1r_2\big(\cos(\alpha_1 + \alpha_2)
+				+ i\sin(\alpha_1 + \alpha_2)\big)
+		\]
+		où $z = r(\cos\alpha + i \sin\alpha)$ est l'écriture du
+		nombre complexe $z$ en coordonnées polaires.
+		%
+		\item Déduire une formule analogue pour $\frac{z_1}{z_2}$
+		lorsque $z_2 \neq 0$.
+		%
+		\item Représenter grphiquement les solutions d'équation
+		$z^3 = 1$ (racines cubiques de l'unité).
+	\end{enumerate}
 	
 	\vspace{5mm}
 	\noindent
-	\textbf{Exercice 4.} 
+	\textbf{Exercice 3.} (Propriétés d'espace vectoriel)\\
+	Soit $V$ un espace vectoriel sur un corps $K$. Démontrer que les
+	propriétés suivantes sont satisfaites
 	
-	\indent asdds
-	
-	\vspace{5mm}
+	\begin{enumerate}[label=\arabic*.]
+		\item \begin{enumerate}[label=(\alph*)]
+			\item L'élément neutre pour l'addition est unique;
+			%
+			\item $\forall v \in V$, l'opposé $(-v)$ de $v$ est unique;
+		\end{enumerate}
+		%
+		\item \begin{enumerate}[label=(\alph*)]
+			\item $0_K \cdot v = 0_V \quad \forall v \in V$;
+			%
+			\item $\lambda \cdot 0_V = 0_V \quad \forall \lambda \in K$;
+		\end{enumerate}
+		%
+		\item L'opposé de $v$, noté $-v$, satisfait $-v = (-1) \cdot v$
+		avec $v \in V$ et $-1 \in K$;
+		%
+		\item $\lambda \cdot v = 0 \iff
+			\lambda = 0_K \ \text{ou}\ v = 0_V$.
+	\end{enumerate}
+		
 	\noindent
-	\textbf{Exercice 5.}
-	
-	\indent asd
+	\textit{NB : Cet exercice figure en tant que Proposition 1.1.1 du
+		polycopié, mais vous pouvez essayer de trouver vous-mêmes
+		les preuves avant de regarder le polycopié.}
 	
 	\newpage
 	
@@ -97,4 +179,135 @@
 		\pageref*{LastPage}
 	}
 	
+	\noindent
+	\textbf{Exercice 4.} (Un exemple d'espace vectoriel)\\
+	Définir les opérations $+$ et $\cdot$ sur $\mathbb{C}^n$ et
+	vérifier que cela munit $\mathbb{C}^n$ d'une structure d'espace
+	vectoriel sur $\mathbb{C}$. Détailler l'associativité de la
+	multiplication par les scalaires.
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 5.} (Est ce un sous-espace vectoriel ?
+	Trouver une famille génératrice.)
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item Les sous-ensembles suivants de $\mathbb{R}^2$ sont-ils
+		des sous-espaces vectoriels sur $\mathbb{R}$ ? Si oui, trouver
+		une famille génératrice.
+		\begin{enumerate}[label=(\alph*)]
+			\item $E = \{(x, y) \in \mathbb{R}^2 \mid x - y = 0\}$
+			\item $E = \{(x, y) \in \mathbb{R}^2 \mid xy - x - y = 0\}$
+		\end{enumerate}
+		%
+		\item Les sous-ensembles suivants de $\mathbb{C}^3$ sont-ils
+		des sous-espaces vectoriels sur $\mathbb{C}$ ? Si oui, trouver
+		une famille génératrice.
+		\begin{enumerate}[label=(\alph*)]
+			\item $E = \{(x, y, z) \in \mathbb{c}^3 \mid x + 2y + 3z = 1\}$
+			\item $E = \{(x, y, z) \in \mathbb{c}^3 \mid y = 0\}$
+			\item $E = \{(x, 2x, 3x) \mid x \in \mathbb{R}\}$
+			\item $E = \{(x, 2x, 3x) \mid x \in \mathbb{C}\}$
+			\item $E = \{(x, y, z) \in \mathbb{C}^3 \mid y^2 -x^3 = 0\}$
+		\end{enumerate}
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 6.} L’objectif de cet exercice est de
+	vérifier que toutes les propriétés demandées dans la définition
+	de sous-espace vectoriel sont nécessaires.
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item Donner un exemple de sous-ensemble non vide $U$ de
+		$\mathbb{R}^2$ qui vérifie
+		\[
+		\begin{split}
+			&\forall u \in U, \forall v \in U, \quad u + v \in U,\\
+			&\forall u \in U, \quad -u \in U
+		\end{split}
+		\]
+		mais qui ne soit pas un sous-espace vectoriel de $\mathbb{R}^2$.
+		%
+		\item Donner un exemple de sous-ensemble non vide $U$ de
+		$\mathbb{R}^2$ qui vérifie
+		\[
+			\forall u \in U, \forall \lambda \in \mathbb{R}, \quad
+				\lambda \cdot u \in U
+		\]
+		mais qui ne soit pas un sous-espace vectoriel de $\mathbb{R}^2$.
+		%
+		\item Donner un exemple de sous-ensemble non vide $U$ de
+		$\mathbb{R}^2$ qui vérifie
+		\[
+		\begin{split}
+			&\forall u \in U, \forall v \in U, \quad u + v \in U,\\
+			&\forall u \in U, \forall \lambda \in \mathbb{R}, \quad
+				\lambda \cdot u \in U,
+		\end{split}
+		\]
+		mais qui ne soit pas un sous-espace vectoriel de $\mathbb{R}^2$.
+	\end{enumerate}
+		
+	\newpage
+	
+	\noindent
+	L'exercice suivant est \textbf{facultatif}. Il ne sera pas
+	corrigé lors de la séance d'exercices, mais sa solution sera
+	postée sur Moodle.
+	
+	\vspace{10mm}
+	\noindent
+	\textbf{Exercice 7.} (Un corps à 3 éléments)\\
+	L’objectif de cet exercice est de construire un corps fini.
+	
+	\noindent
+	Rappelons que le reste de la division d’un entier $n$ par $3$
+	est l’unique entier $r$ entre $0$ et $3 - 1$ (compris) tel
+	que $n - r$ soit divisible par $3$. Par exemple, le reste de
+	$5$ est $2$, le reste de $39$ est $0$, le reste de $-2$ est $1$,
+	et le reste de votre numéro d’étudiant est votre groupe pour
+	les séances d’exercices.\\
+	
+	\noindent
+	Considérons $K = \{0, 1, 2\}$ et définissons les opérations
+	\[
+	\begin{split}
+		&a \oplus b = \text{le reste de la division de }
+			a + b \text{ par } 3\\
+		&a \otimes b = \text{le reste de la division de }
+			a \cdot b \text{ par } 3
+	\end{split}
+	\]
+	Remplir les tables d'addition et de multiplication suivantes.
+	
+	\begin{center}
+	\begin{tabular}{l|l|l|l|}
+		$\oplus$ & 0 & 1 & 2 \\
+		\hline
+		0 & & & \\
+		\hline
+		1 & & & \\
+		\hline
+		2 & & & \\
+		\hline
+	\end{tabular}
+	\qquad
+	\begin{tabular}{l|l|l|l|}
+		$\otimes$ & 0 & 1 & 2 \\
+		\hline
+		0 & & & \\
+		\hline
+		1 & & & \\
+		\hline
+		2 & & & \\
+		\hline
+	\end{tabular}
+	\end{center}
+	
+	\noindent
+	Montrer l'existence des neutres additif et multiplicatif. Montrer
+	que tout élément admet un inverse pour $\oplus$, et tout élément
+	non-nul admet un inverse pour $\otimes$.\\
+	Vérifier que l'addition	est commutative.
 \end{document}
