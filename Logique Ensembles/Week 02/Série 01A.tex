@@ -1,0 +1,143 @@
+% !TeX spellcheck = fr_FR
+
+% TODO: Replace scan images with clean text where possible
+
+\documentclass[a4paper, 10pt]{report}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amssymb, amsfonts}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage{enumitem}
+
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=35mm,
+	bottom=25mm,
+	headsep=5mm,
+	headheight=20mm,
+}
+
+\definecolor{solution}{HTML}{E5E4E2}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\begin{document}
+	
+	\renewcommand{\headrule}{%
+		\vspace{-4pt}\hrulefill
+		\raisebox{-6.8pt}{\ \includegraphics[height=5mm]{../../icon.png}}
+		\hrulefill
+	}	
+	\pagestyle{fancy}
+	\fancyhf{}
+	
+	\fancyhead[L]{\small \slshape Automne 2024}
+	\fancyhead[C]{\Large \bfseries Logique et Théorie des Ensembles\\
+		Série 01-A}
+	\fancyhead[R]{\small Buff Mathias}
+	\fancyfoot[L]{
+		\small Source files available at:
+		\href{https://github.com/MathiasBuff/bsc-math}
+		{github.com/MathiasBuff/bsc-math}
+	}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+	\noindent
+	\textbf{Exercice 1.} Soient $E, F$, et $G$ trois ensembles.\\
+	\indent
+	Montrer que si $E \subset G$ et $F \subset G$,
+	alors $E \cup F \subset G$.
+	
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 2.} Soient $A, B$, et $C$ trois ensembles.
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item Montrer que : $(A = B) \iff (A \cup B \subset A \cap B)$.
+		%
+		\item Montrer que :
+		 $(A \subset B) \iff (\mathcal{P}(A) \subset \mathcal{P}(B))$.
+		%
+		\item Montrer que : $(A \cup B \subset A \cup C
+			\ \text{et}\ A \cap B \subset A \cap C)
+			\implies (B \subset C)$
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 3.} Dites si les propositions suivantes sont
+	VRAIES ou FAUSSES :
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item $\mathbb{Q} \in \mathbb{R}$
+		%
+		\item $\mathbb{Q} \subset \mathbb{R}$
+		%
+		\item $\{\emptyset\} \in \mathcal{P}(\mathbb{N})$
+		%
+		\item $\{\emptyset\} \subset \mathcal{P}(\mathbb{N})$
+		%
+		\item $\emptyset \subset \mathcal{P}(\mathbb{N})$
+		%
+		\item $\{\{1\}\} \in \mathcal{P}(\{1, 2, 3\})$
+		%
+		\item $\{\{1\}\} \subset \mathcal{P}(\{1, 2, 3\})$
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 4.} Considérons les sous-ensembles de
+	$\mathbb{N}$ suivants :
+	
+	\[
+		A = \{1, 2, 3, 4, 5, 6, 7\} \quad
+		B = \{1, 2, 5, 7\} \quad
+		C = \{2, 3, 4, 6\} \quad
+		D = \{3, 6\}
+	\]
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item Déterminer $B \cap D$ et $C \cap D$.
+		%
+		\item Déterminer $B \cup D$ et $C \cup D$. L'une de ces deux
+		unions est-elle disjointe ?
+		%
+		\item Déterminer les complémentaires dans $A$ de $B, C$, et $D$.
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	{\color{red}\textbf{Exercice 5.}}
+	On se donne  $A, B$ des parties de $E$.
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item Donner une condition nécessaire et suffisante pour que
+		l'équation $A \cap X = B$, où $X = \mathcal{P}(E)$ est
+		l'inconnue, admette au moins une solution, et résoudre alors
+		l'équation.
+		%
+		\item Même question pour $A \cup X = B$
+		%
+		\item Même question pour $A \bigtriangleup X = B$, où
+		$\bigtriangleup$ désigne la différence symétrique
+		$A \bigtriangleup B = (A \setminus B) \cup (B \setminus A)$.
+	\end{enumerate}
+\end{document}

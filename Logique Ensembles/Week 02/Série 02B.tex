@@ -1,0 +1,114 @@
+% !TeX spellcheck = fr_FR
+
+% TODO: Replace scan images with clean text where possible
+
+\documentclass[a4paper, 10pt]{report}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amssymb, amsfonts}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage{enumitem}
+
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=35mm,
+	bottom=25mm,
+	headsep=5mm,
+	headheight=20mm,
+}
+
+\definecolor{solution}{HTML}{E5E4E2}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\begin{document}
+	
+	\renewcommand{\headrule}{%
+		\vspace{-4pt}\hrulefill
+		\raisebox{-6.8pt}{\ \includegraphics[height=5mm]{../../icon.png}}
+		\hrulefill
+	}	
+	\pagestyle{fancy}
+	\fancyhf{}
+	
+	\fancyhead[L]{\small \slshape Automne 2024}
+	\fancyhead[C]{\Large \bfseries Logique et Théorie des Ensembles\\
+		Série 02-B}
+	\fancyhead[R]{\small Buff Mathias}
+	\fancyfoot[L]{
+		\small Source files available at:
+		\href{https://github.com/MathiasBuff/bsc-math}
+		{github.com/MathiasBuff/bsc-math}
+	}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+	\noindent
+	\textbf{Exercice 1.} En partant de l'ensemble vide, construire à
+	l'aide des axiomes des ensembles à $10$ et $2^{10}$ éléments.
+	Pensez-vous pouvoir construire des ensembles de taille finie
+	quelconque ?
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 2.} (Différence symétrique). L'opération
+	$\bigtriangleup$ est définie sur les ensembles $A, B \subset E$\\
+	par $A \bigtriangleup B =
+		(A \cap (E \setminus B)) \cup (B \cap (E \setminus A))$.
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item Montrer que : $A \bigtriangleup B =
+			(A \cup B) \setminus (A \cap B)$.
+		%
+		\item Vérifier que : $A \bigtriangleup B = \emptyset
+			\iff (A = B)$.
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 3.} Soient $E, F$, et $G$ trois ensembles.
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item Montrer que $E \cup (F \cap G)
+			= (E \cup F) \cap (E \cup G)$.
+		%
+		\item Montrer que $E \setminus (F \cup G)
+			= (E \setminus F) \cap (E \setminus G)$.
+		%
+		\item Montrer que $E \setminus (F \cap G)
+		= (E \setminus F) \cup (E \setminus G)$.
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 4.} Montrer que $E = F$ si et seulement si
+	$\mathcal{P}(E) = \mathcal{P}(F)$.
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 5.} Expliciter les éléments de l'ensemble
+	$\mathcal{P}(\mathcal{P}(\{0\}))$.
+	
+	\vspace{5mm}
+	\noindent
+	{\color{red}\textbf{Exercice 6.}}
+	Montrer qu'il n'existe pas d'ensemble $F$ de tous les ensembles
+	(on pourra raisonner par l'absurde et considérer la partie de $F$
+	composée des ensembles ne s'appartenant pas).	
+\end{document}
