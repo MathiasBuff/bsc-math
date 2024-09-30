@@ -133,7 +133,7 @@
 		\item Déduire une formule analogue pour $\frac{z_1}{z_2}$
 		lorsque $z_2 \neq 0$.
 		%
-		\item Représenter grphiquement les solutions d'équation
+		\item Représenter graphiquement les solutions d'équation
 		$z^3 = 1$ (racines cubiques de l'unité).
 	\end{enumerate}
 	
@@ -200,19 +200,91 @@
 			\item $E = \{(x, y) \in \mathbb{R}^2 \mid xy - x - y = 0\}$
 		\end{enumerate}
 		%
+		\colorbox{solution}
+		{
+			\begin{minipage}{0.9\textwidth}
+				\begin{enumerate}[label=(\alph*)]
+					\item \underline{Oui} : Il s'agit de la droite dans
+					$\mathbb{R}^2$ d'équation $y = x$.\\
+					$\left\{\left(\begin{smallmatrix}
+						1\\
+						1
+					\end{smallmatrix}\right)\right\}$
+					est une famille génératrice de cette droite.
+					%
+					\item \underline{Non} : $(2, 2) \in E$, mais
+					$2 \cdot (2, 2) = (4, 4) \notin E$, donc $E$ n'est pas
+					clos pour la multiplication par un scalaire (il est
+					également facile de vérifier qu'il n'est pas clos
+					pour l'addition), par conséquent $E$ n'est pas un
+					sous-espace vectoriel de $\mathbb{R}^2$.
+				\end{enumerate}
+			\end{minipage}
+		}
+		%
 		\item Les sous-ensembles suivants de $\mathbb{C}^3$ sont-ils
 		des sous-espaces vectoriels sur $\mathbb{C}$ ? Si oui, trouver
 		une famille génératrice.
 		\begin{enumerate}[label=(\alph*)]
-			\item $E = \{(x, y, z) \in \mathbb{c}^3 \mid x + 2y + 3z = 1\}$
-			\item $E = \{(x, y, z) \in \mathbb{c}^3 \mid y = 0\}$
+			\item $E = \{(x, y, z) \in \mathbb{C}^3 \mid x + 2y + 3z = 1\}$
+			\item $E = \{(x, y, z) \in \mathbb{C}^3 \mid y = 0\}$
 			\item $E = \{(x, 2x, 3x) \mid x \in \mathbb{R}\}$
 			\item $E = \{(x, 2x, 3x) \mid x \in \mathbb{C}\}$
 			\item $E = \{(x, y, z) \in \mathbb{C}^3 \mid y^2 -x^3 = 0\}$
 		\end{enumerate}
+		%
+		\colorbox{solution}
+		{
+			\begin{minipage}{0.9\textwidth}
+				\begin{enumerate}[label=(\alph*)]
+					\item \underline{Non} : 
+						$0_{\mathbb{C}^3} = (0, 0, 0)$
+						n'appartient pas à $E$
+					%
+					\item \underline{Oui} : Il s'agit du "plan" formé
+						par les "axes" $x$ et $z$.\\
+						$\left\{\left(\begin{smallmatrix}
+							1\\ 0 \\ 0
+						\end{smallmatrix}\right),
+						\left(\begin{smallmatrix}
+							i\\ 0 \\ 0
+						\end{smallmatrix}\right),
+						\left(\begin{smallmatrix}
+							0\\ 0 \\ 1
+						\end{smallmatrix}\right),
+						\left(\begin{smallmatrix}
+							0\\ 0 \\ i
+						\end{smallmatrix}\right)\right\}$
+						est génératrice de ce sous-espace vectoriel.
+					%
+					\item \underline{Non} : Si $v \in E$, alors
+						$i \cdot v \notin E$, donc $E$ n'est pas clos
+						pour la multiplication par un scalaire dans
+						$\mathbb{C}$.
+					%
+					\item \underline{Oui} : Il s'agit du plan formé par
+						les points $(0, 0, 0), (1, 2, 3), (i, 2i, 3i)$.\\
+						$\left\{\left(\begin{smallmatrix}
+							1\\ 2 \\ 3
+						\end{smallmatrix}\right),
+						\left(\begin{smallmatrix}
+							i\\ 2i \\ 3i
+						\end{smallmatrix}\right)\right\}$
+						est génératrice de ce plan.
+					%
+					\item \underline{Non} : $(1, 1, 1) \in E$, mais
+						$(1, 1, 1) + (1, 1, 1) = (2, 2, 2) \notin E$,
+						donc $E$ n'est pas clos pour l'addition.
+						(Il n'est également pas clos pour la
+						multiplication par un scalaire.)
+				\end{enumerate}
+			\end{minipage}
+		}
 	\end{enumerate}
+
 	
-	\vspace{5mm}
+	\newpage
+	
 	\noindent
 	\textbf{Exercice 6.} L’objectif de cet exercice est de
 	vérifier que toutes les propriétés demandées dans la définition
@@ -221,13 +293,29 @@
 	\begin{enumerate}[label=\arabic*.]
 		\item Donner un exemple de sous-ensemble non vide $U$ de
 		$\mathbb{R}^2$ qui vérifie
-		\[
-		\begin{split}
+		\[\begin{split}
 			&\forall u \in U, \forall v \in U, \quad u + v \in U,\\
 			&\forall u \in U, \quad -u \in U
-		\end{split}
-		\]
+		\end{split}\]
 		mais qui ne soit pas un sous-espace vectoriel de $\mathbb{R}^2$.
+		
+		\colorbox{solution}
+		{
+			\begin{minipage}{0.9\textwidth}
+				Le sous-ensemble $U = \mathbb{Z}^2$ satisfait les
+				conditions données :\\
+				Soient $u = (a, b), v = (c, d),
+					\quad a, b, c, d \in \mathbb{Z}$, alors
+				\[\begin{split}
+					&(a, b) + (c, d) = (a+c, b+d) \in U\\
+					&-u = (-a, -b) \in U
+				\end{split}\]
+				En revanche, $[\forall u \in U,
+					\forall \lambda \in \mathbb{R}, \quad
+					\lambda \cdot u \in U]$ n'est pas vérifiée,
+				il suffit de prendre $\lambda = \frac{1}{a}$
+			\end{minipage}
+		}
 		%
 		\item Donner un exemple de sous-ensemble non vide $U$ de
 		$\mathbb{R}^2$ qui vérifie
@@ -236,17 +324,53 @@
 				\lambda \cdot u \in U
 		\]
 		mais qui ne soit pas un sous-espace vectoriel de $\mathbb{R}^2$.
+		
+		\colorbox{solution}
+		{
+			\begin{minipage}{0.9\textwidth}
+				Le sous-ensemble $U = \left\{(x, \abs{x}) \mid 
+					x \in \mathbb{R} \right\}$ satisfait les
+				conditions données :\\
+				Soient $u \in U, \lambda \in \mathbb{R}$, alors
+				\[
+					\forall \lambda \in \mathbb{R}, \quad
+						\lambda \cdot u = \lambda \cdot (x, \abs{x})
+						= (\lambda \cdot x, \lambda \cdot \abs{x})
+						= (\lambda x, \abs{\lambda x}) \in U
+				\]
+				En revanche, $[\forall u \in U, \quad -u \in U]$ n'est
+				pas vérifiée, car $(-x, -\abs{x}) \notin U$.
+			\end{minipage}
+		}
 		%
 		\item Donner un exemple de sous-ensemble non vide $U$ de
 		$\mathbb{R}^2$ qui vérifie
-		\[
-		\begin{split}
+		\[\begin{split}
 			&\forall u \in U, \forall v \in U, \quad u + v \in U,\\
-			&\forall u \in U, \forall \lambda \in \mathbb{R}, \quad
+			&\forall u \in U, \forall \lambda > 0, \quad
 				\lambda \cdot u \in U,
-		\end{split}
-		\]
+		\end{split}\]
 		mais qui ne soit pas un sous-espace vectoriel de $\mathbb{R}^2$.
+		
+		\colorbox{solution}
+		{
+			\begin{minipage}{0.9\textwidth}
+				Le sous-ensemble $U = \left\{(x, y) \mid 
+					x, y \in \mathbb{R}_+ \right\}$ satisfait les
+				conditions données :\\
+					Soient $u = (x_1, y_1), v = (x_2, y_2),
+				\quad x_1, y_1, x_2, y_2 \in \mathbb{R}_+$, alors
+				\[\begin{split}
+					&u + v = (x_1, y_1) + (x_2, y_2)
+						= (x_1 + x_2, y_1 + y_2) \in U\\
+					&\forall \lambda > 0, \quad \lambda \cdot u
+						= \lambda \cdot (x_1, y_1)
+						= (\lambda x_1, \lambda y_1) \in U
+				\end{split}\]
+				En revanche, $0_{\mathbb{R}^2} = (0, 0)$ pas un
+				élément de $U$.
+			\end{minipage}
+		}
 	\end{enumerate}
 		
 	\newpage
@@ -310,4 +434,70 @@
 	que tout élément admet un inverse pour $\oplus$, et tout élément
 	non-nul admet un inverse pour $\otimes$.\\
 	Vérifier que l'addition	est commutative.
+	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			\vspace{6pt}
+			\begin{center}
+				\begin{tabular}{l|l|l|l|}
+					$\oplus$ & 0 & 1 & 2 \\
+					\hline
+					0 & 0 & 1 & 2 \\
+					\hline
+					1 & 1 & 2 & 0 \\
+					\hline
+					2 & 2 & 0 & 1 \\
+					\hline
+				\end{tabular}
+				\qquad
+				\begin{tabular}{l|l|l|l|}
+					$\otimes$ & 0 & 1 & 2 \\
+					\hline
+					0 & 0 & 0 & 0 \\
+					\hline
+					1 & 0 & 1 & 2 \\
+					\hline
+					2 & 0 & 2 & 1 \\
+					\hline
+				\end{tabular}
+			\end{center}
+			
+			\begin{itemize}
+				\item $0$ est l'élément neutre pour $\oplus$, car
+				$\forall x \in \{0, 1, 2\}, 0 \oplus x = x \oplus 0 = x$.
+				%
+				\item $1$ est l'élément neutre pour $\otimes$, car
+				$\forall x \in \{0, 1, 2\}, 1 \otimes x = x \otimes 1 = x$.
+				%
+				\item On observe que :
+				\begin{itemize}
+					\item $0 \oplus 0 = 0$, donc $0$ est l'inverse
+					pour $\oplus$ de $0$
+					%
+					\item $1 \oplus 2 = 0$, donc $2$ est l'inverse
+					pour $\oplus$ de $1$
+					%
+					\item $2 \oplus 1 = 0$, donc $1$ est l'inverse
+					pour $\oplus$ de $2$
+					%
+				\end{itemize}
+				%
+				\item On observe que :
+				\begin{itemize}
+					\item $1 \otimes 1 = 1$, donc $1$ est l'inverse
+					pour $\otimes$ de $1$
+					%
+					\item $2 \otimes 2 = 1$, donc $2$ est l'inverse
+					pour $\otimes$ de $2$
+					%
+				\end{itemize}
+				%
+				\item Enfin, la table d'addition étant symétrique selon
+				sa diagonale, on peut en déduire que l'addition est
+				commutative (la même observation peut être faite
+				pour la multiplication).
+			\end{itemize}
+		\end{minipage}
+	}
 \end{document}
