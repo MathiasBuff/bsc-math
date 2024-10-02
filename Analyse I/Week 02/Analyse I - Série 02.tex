@@ -94,10 +94,42 @@
 					\exists b \in E : b \geq a - \epsilon))]$
 	\end{enumerate}
 	
-	\includegraphics{ex01.jpg}
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			\begin{enumerate}[label=(\roman*)]
+				\item $\forall x \in \mathbb{R},
+				\forall \delta > 0,
+				\exists y \in \mathbb{R},
+				[\abs{x - y} \leq \delta \ \text{et}\ f(x) < f(y)]$
+				%
+				\item $\exists x \in \mathbb{R},
+				\exists \epsilon > 0,
+				\forall \delta > 0,
+				\exists y \in \mathbb{R},
+				[\abs{x - y} < \delta \ \text{et}\ \abs{f(x) - f(y)} > \epsilon]$
+				%
+				\item $\exists \epsilon > 0,
+				\forall N \in \mathbb{N},
+				\exists x \in \mathbb{R},
+				\exists n \geq N,
+				[n \geq N \ \text{et}\ \abs{f_n(x) - f(x)} > \epsilon]$
+				%
+				\item $\exists E \subset \mathbb{N},
+				[E \neq \emptyset \ \text{et}\ (\forall n \in E,
+				\exists m \in E, m < n)]$
+				%
+				\item $\exists E \subset \mathbb{R},
+				[E \neq \emptyset \ \text{et}\ \forall a \in \mathbb{R},
+				((\exists b \in E : b > a)\
+				\text{ou}\
+				(\exists \epsilon > 0,
+				\forall b \in E : b < a - \epsilon))]$
+			\end{enumerate}
+		\end{minipage}
+	}
 	
-	\newpage
-	
+	\vspace{5mm}
 	\fancyhf{}
 	\renewcommand{\headrule}
 	{\rule{\textwidth}{0pt}}
@@ -155,10 +187,43 @@
 		\end{enumerate}
 	\end{enumerate}
 	
-	\includegraphics{ex03.jpg}
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			\begin{enumerate}[label=(\roman*)]
+				\item "La suite $(u_n)$ est strictement croissante"\\
+				Négation : $\exists n \geq 0, u_n \geq u_{n+1}$
+				%
+				\item \begin{enumerate}[label=(\alph*)]
+					\item "f est constante en C"\\
+					Négation : $\forall C \in \mathbb{R},
+						\exists x \in E,
+						f(x) \neq C$
+					%
+					\item "f ne s'annule qu'en $x = 0$"\\
+					Négation : $\exists x \in E,
+						[f(x) = 0 \ \text{et}\ x \neq 0]$
+					%
+					\item "f est surjective"\\
+					Négation : $\exists y \in \mathbb{R},
+						\forall x \in E,
+						f(x) \neq y$
+					%
+					\item "f est injective"\\
+					Négation :  $\exists x \in E,
+						\exists y \in E,
+						[f(x) = f(y) \ \text{et}\ x \neq y]$
+					%
+					\item "f est majorée par A"\\
+					Négation : $\forall A \in \mathbb{R},
+						\exists x \in E,
+						f(x) > A$
+				\end{enumerate}
+			\end{enumerate}
+		\end{minipage}
+	}
 	
-	\newpage
-	
+	\vspace{5mm}
 	\noindent
 	\textbf{Exercice 4.} Soit $f : E \to \mathbb{R}$ une fonction.
 	Exprimer à l'aide de quantificateurs les assertions suivantes.
@@ -173,9 +238,39 @@
 		\item $f$ ne peut s'annuler qu'une seule fois.
 	\end{enumerate}
 	
-	\includegraphics{ex04.jpg}
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			\begin{enumerate}[label=(\roman*)]
+				\item $\exists x \in E,
+					f(x) = 0$
+				%
+				\item $\forall x \in E,
+					f(x) = 0$
+				%
+				\item $\forall C \in \mathbb{R},
+					\exists x \in E,
+					f(x) \neq C$
+				%
+				\item $\forall x, y \in E,
+					f(x) = f(y) \implies x = y$
+				%
+				\item $\exists m \in E,
+					\forall x \in E,
+					f(m) \leq f(x)$
+				%
+				\item $\forall M \in \mathbb{R},
+					\exists x \in E,
+					f(x) \geq M$
+				%
+				\item $\forall x, y \in E,
+					f(x) = f(y) = 0 \implies x = y$
+			\end{enumerate}
+		\end{minipage}
+	}
 	
-	\vspace{5mm}
+	\newpage
+	
 	\noindent
 	\textbf{Exercice 5.} Soient $E$ et $F$ deux ensembles et
 	$A(x, y)$ des assertions indexées par $(x, y) \in E \times F$.
@@ -196,8 +291,7 @@
 	
 	\includegraphics{ex05.jpg}
 	
-	\newpage
-	
+	\vspace{5mm}
 	\noindent
 	\textbf{Exercice 6.} (Fonctions caractéristiques $\chi_A$).
 	Soient $E$ un ensemble et $A \subset E$. La fonction
@@ -216,6 +310,8 @@
 		si ils ont la même fonction caractéristique.
 		
 		\includegraphics{ex06-1.jpg}
+		%
+		\newpage
 		%
 		\item Que peut-on dire sur $A$ et $B$ si
 		$\chi_A(x) \leq \chi_B(x)$ pour tout $x \in E$ ?
@@ -258,7 +354,6 @@
 	\includegraphics{ex07.jpg}
 	
 	\newpage
-	
 	\noindent
 	\textbf{Exercice 8.} Soit $f : E \to F$ une fonction.
 	
@@ -269,7 +364,20 @@
 		(Notons que l'image réciproque existe pour tout $f$, tandis
 		que la fonction inverse uniquement si $f$ est bijective.)
 		
-		\includegraphics{ex08-1.jpg}
+		\colorbox{solution}
+		{
+			\begin{minipage}{0.9\textwidth}
+				Soit $A \subset E$ tel que $B$ est l'image directe de
+				$A$ par $f$, \textit{i.e.} $f(A) = B$. Alors l'image
+				réciproque de $B$ est $f^{-1}(B) = A$.
+				
+				Comme $B$ est l'image directe de $A$, pour tout
+				$y \in B$ il existe $x \in A$ tel que $f(x) = y$.
+				Puisque $f$ est bijective, $x$ est unique et
+				$f^{-1}(y) = x$. Donc $A$ est également l'image
+				directe de $B$ par $f^{-1}$.
+			\end{minipage}
+		}
 		%
 		\item Montrer que pour tout $A, B \subset F$ on a
 		\[
@@ -277,7 +385,26 @@
 			f^{-1}(A \cap B) = f^{-1}(A) \cap f^{-1}(B)
 		\]
 		
-		\includegraphics{ex08-2.jpg}
+		\colorbox{solution}
+		{
+			\begin{minipage}{0.9\textwidth}
+				\[ \begin{split}
+					f^{-1}(A \cup B) &= \{x \in E : f(x) \in A \cup B\}
+					= \{x \in E : f(x) \in A \ \text{ou}\ f(x) \in B\}\\
+					&= \{x \in E : f(x) \in A\}
+						\cup \{x \in E : f(x) \in B\}
+					= f^{-1}(A) \cup f^{-1}(B)
+				\end{split}\]
+				
+				\[ \begin{split}
+					f^{-1}(A \cap B) &= \{x \in E : f(x) \in A \cup B\}
+					= \{x \in E : f(x) \in A \ \text{et}\ f(x) \in B\}\\
+					&= \{x \in E : f(x) \in A\}
+					\cap \{x \in E : f(x) \in B\}
+					= f^{-1}(A) \cap f^{-1}(B)
+				\end{split}\]
+			\end{minipage}
+		}
 		%
 		\item Montrer que pour tout $A, B \subset F$ on a
 		\[
@@ -286,17 +413,37 @@
 		\]
 		
 		\includegraphics{ex08-3.jpg}
-		\newpage
+		%
 		\item Montrer qu'en général $f(A \cap B) = f(A) \cap f(B)$
 		est fausse.\\
 		Montrer aussi qu'elle est vraie si $f$ est injective.
 		
-		\includegraphics{ex08-4.jpg}
-		%
+		\colorbox{solution}
+		{
+			\begin{minipage}{0.9\textwidth}
+				Contre-exemple : $f: \mathbb{R} \to \mathbb{R},
+					x \mapsto x^2$ avec 
+				$A = \mathbb{R}_+$ et $B = \mathbb{R}_-$.\\				
+				Alors $A \cap B = \{0\}$, et $f(A \cap B) = \{0\}$.
+				Par contre, $f(A) = f(B) = f(A) \cap f(B)	
+					= \mathbb{R}_+$.\\
+					
+				En revanche, si $f$ est injective :
+				Soit $f(x) \in f(A) \cap f(B)$. Alors $f(x) \in f(A)$
+				et $f(x) \in f(B)$, et comme $f$ est injective alors
+				$x \in A$ et $x \in B$. Donc, $x \in A \cap B$ et
+				$f(x) \in f(A \cap B)$.
+				
+				Par conséquent, $f(A) \cap f(B) \subset f(A \cap B)$
+				et comme $f(A) \cap f(B) \supset f(A \cap B)$
+				(démontrée au point (iii)), alors
+				$f(A \cap B) = f(A) \cap f(B)$.
+			\end{minipage}
+		}
 	\end{enumerate}
 	
 	\newpage
-	
+		
 	\noindent
 	\textbf{Exercice 9.}
 	
