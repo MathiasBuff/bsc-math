@@ -1,0 +1,172 @@
+% !TeX spellcheck = fr_FR
+
+% TODO: Replace scan images with clean text where possible
+
+\documentclass[a4paper, 10pt]{report}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amssymb, amsfonts}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage{enumitem}
+
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=35mm,
+	bottom=25mm,
+	headsep=5mm,
+	headheight=20mm,
+}
+
+\definecolor{solution}{HTML}{E5E4E2}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\card}{card}
+
+\begin{document}
+	
+	\renewcommand{\headrule}{%
+		\vspace{-4pt}\hrulefill
+		\raisebox{-6.8pt}{\ \includegraphics[height=5mm]{../../icon.png}}
+		\hrulefill
+	}	
+	\pagestyle{fancy}
+	\fancyhf{}
+	
+	\fancyhead[L]{\small \slshape Automne 2024}
+	\fancyhead[C]{\Large \bfseries Algèbre I - Série 03}
+	\fancyhead[R]{\small Buff Mathias}
+	\fancyfoot[L]{
+		\small Source files available at:
+		\href{https://github.com/MathiasBuff/bsc-math}
+		{github.com/MathiasBuff/bsc-math}
+	}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+
+	\noindent
+	\textbf{Exercice 1.} (Familles libres et génératrices de vecteurs)\\
+	Les familles suivantes sont-elles libres ou génératrices ? Si oui
+	le prouver, sinon donner un contre-exemple.
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item $\{(1, 1), (1, -i)\}$ dans l'espace vectoriel
+		$\mathbb{C}^2$ sur $\mathbb{C}$
+		%
+		\item $\{(1, 2, 2), (-2, 0, 2), (-2, 2, -1)\}$ dans l'espace
+		vectoriel $\mathbb{R}^3$ sur $\mathbb{R}$
+		%
+		\item $\{(1, 2, 2), (-2, 0, 2), (-2, 2, -1)\}$ dans l'espace
+		vectoriel $\mathbb{C}^3$ sur $\mathbb{R}$
+		%
+		\item Donner une base de $\mathbb{C}^2$ sur $\mathbb{R}$.
+		Et sur $\mathbb{C}$ ?
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 2.} (Indépendance linéaire de fonctions)\\
+	Dans l'espace vectoriel des fonctions
+	$\mathcal{F}(\mathbb{R}, \mathbb{R})$, les familles ci-dessous
+	sont-elles libres ?
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item $\{3x^2, 2x^4\}$
+		%
+		\item $\{3^x, 3^{x+3}\}$
+		%
+		\item $\{1m \sin^2(x), \cos^2(x)\}$
+		%
+		\item $\{\cos(x), \cos(2x), \cos(4x)\}$
+		%
+		\item La famille infinie $\{1, \sin(x), \sin(2x), \sin(4x),
+			\sin(8x), \sin(16x), \dotsc\}$
+	\end{enumerate}
+	
+		\vspace{5mm}
+	\noindent
+	\textbf{Exercice 3.} (Sous-famille libre)\\
+	Montrer l'affirmation suivante :
+	
+	Si $\{v_1, \dotsc, v_n\}$ est une famille libre dans un espace
+	vectoriel $V$,\\ \indent
+	Alors toute sous-famille $\{v_i\}_{i \in I}$ indexée par 
+	$I \subset \{1, \dotsc, n\}$ est aussi libre.	
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 4.} (Dimension d'un espace vectoriel sur
+	$\mathbb{R}$ et sur $\mathbb{C}$)\\
+	On note $\dim_{\mathbb{K}}(E)$ la dimension de l'espace vectoriel
+	$E$ sur le corps $\mathbb{K}$.
+	
+	\begin{enumerate}[label=(\alph*)]
+		\item Montrer que $\dim_{\mathbb{R}}(\mathbb{R}) = 1$ et
+		$\dim_{\mathbb{R}}(\mathbb{C}) = 2$.
+		%
+		\item En déduire $\dim_{\mathbb{R}}(\mathbb{R}^n)$ et
+		$\dim_{\mathbb{R}}(\mathbb{C}^n)$.
+		%
+		\item Montrer que $\dim_{\mathbb{C}}(\mathbb{C}) = 1$.
+		En déduire $\dim_{\mathbb{C}}(\mathbb{C}^n)$.
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 5.} (Base, famille libre maximale et famille
+	génératrice minimale)\\
+	Soit $V$ un espace vectoriel sur $\mathbb{K}$ et une famille
+	de vecteurs $\mathcal{F} = \{v_1, \dotsc, v_n\} \subset V$.
+	
+	\begin{enumerate}[label=(\alph*)]
+		\item En cours, nous avons vu que les conditions suivantes
+		sont équivalentes :
+		\begin{enumerate}[label=(\roman*)]
+			\item $\mathcal{F}$ est une base de $V$
+			\item $\mathcal{F}$ est une famille
+				libre maximale de $V$
+			\item $\mathcal{F}$ est une famille
+				génératrice minimale de $V$
+		\end{enumerate}
+		L'équivalence $(i) \iff (ii)$ a été montrée en cours.
+		Montrer l'équivalence $(i) \iff (iii)$.
+		%
+		\item Montrer que
+		\[
+			\mathcal{F}\ \text{est une base de}\ V \iff
+			\mathcal{F}\ \text{est génératrice et}\
+			\card(\mathcal{F}) = \dim_{\mathbb{K}}(V)
+		\]
+		
+		\textit{Indication :} $card(\mathcal{F})$ est le nombre
+		d'éléments de la famille $\mathcal{F}$.
+	\end{enumerate}
+	
+	\newpage
+	
+	\fancyhf{}
+	\renewcommand{\headrule}
+	{\rule{\textwidth}{0pt}}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+\end{document}

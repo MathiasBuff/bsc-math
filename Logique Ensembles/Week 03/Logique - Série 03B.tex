@@ -1,0 +1,100 @@
+% !TeX spellcheck = fr_FR
+
+% TODO: Replace scan images with clean text where possible
+
+\documentclass[a4paper, 10pt]{report}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amssymb, amsfonts}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage{enumitem}
+
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=35mm,
+	bottom=25mm,
+	headsep=5mm,
+	headheight=20mm,
+}
+
+\definecolor{solution}{HTML}{E5E4E2}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\begin{document}
+	
+	\renewcommand{\headrule}{%
+		\vspace{-4pt}\hrulefill
+		\raisebox{-6.8pt}{\ \includegraphics[height=5mm]{../../icon.png}}
+		\hrulefill
+	}	
+	\pagestyle{fancy}
+	\fancyhf{}
+	
+	\fancyhead[L]{\small \slshape Automne 2024}
+	\fancyhead[C]{\Large \bfseries Logique et Théorie des Ensembles\\
+		Série 03-B}
+	\fancyhead[R]{\small Buff Mathias}
+	\fancyfoot[L]{
+		\small Source files available at:
+		\href{https://github.com/MathiasBuff/bsc-math}
+		{github.com/MathiasBuff/bsc-math}
+	}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+	\noindent
+	\textbf{Exercice 1.} Montrer que $(A \setminus B) \setminus C
+		= A \setminus (B \cup C)$.
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 2.}  Montrer que $(A \cap B) \times (C \cap D)
+		= (A \times C) \cap (B \times D)$.
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 3.} (Lois de De Morgan généralisées).\\
+	Soient $I \neq \emptyset$ un ensemble et $(A_i)_{i \in I}$
+	une famille de parties de $E$ et $A \subset E$. Montrer que
+	
+	\[
+		A \cap \left(\bigcup\limits_{i \in I} A_i\right) =
+			\bigcup\limits_{i \in I}(A \cap A_i),
+		\quad
+		A \cup \left(\bigcap\limits_{i \in I} A_i\right) =
+			\bigcap\limits_{i \in I}(A \cap A_i)
+	\]
+	\[
+		A \setminus \bigcup\limits_{i \in I} A_i =
+			\bigcap\limits_{i \in I} (A \setminus A_i),
+		\quad
+		A \setminus \bigcap\limits_{i \in I} A_i =
+			\bigcup\limits_{i \in I} (A \setminus A_i)
+	\]
+		
+
+	\vspace{5mm}
+	\noindent
+	{\color{red}\textbf{Exercice 4.}}
+	Soient $A$ et $B$ deux ensembles.\\
+	Trouver une condition nécessaire et suffisante pour que
+	$A \times B = B \times A$
+	
+\end{document}

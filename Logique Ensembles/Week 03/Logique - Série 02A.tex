@@ -1,0 +1,104 @@
+% !TeX spellcheck = fr_FR
+
+% TODO: Replace scan images with clean text where possible
+
+\documentclass[a4paper, 10pt]{report}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amssymb, amsfonts}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage{enumitem}
+
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=35mm,
+	bottom=25mm,
+	headsep=5mm,
+	headheight=20mm,
+}
+
+\definecolor{solution}{HTML}{E5E4E2}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\begin{document}
+	
+	\renewcommand{\headrule}{%
+		\vspace{-4pt}\hrulefill
+		\raisebox{-6.8pt}{\ \includegraphics[height=5mm]{../../icon.png}}
+		\hrulefill
+	}	
+	\pagestyle{fancy}
+	\fancyhf{}
+	
+	\fancyhead[L]{\small \slshape Automne 2024}
+	\fancyhead[C]{\Large \bfseries Logique et Théorie des Ensembles\\
+		Série 02-A}
+	\fancyhead[R]{\small Buff Mathias}
+	\fancyfoot[L]{
+		\small Source files available at:
+		\href{https://github.com/MathiasBuff/bsc-math}
+		{github.com/MathiasBuff/bsc-math}
+	}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+	\noindent
+	\textbf{Exercice 1.} Deux ensembles disjoints sont-ils
+	nécessairement distincts ?	
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 2.} Montrer que
+	
+	\begin{itemize}
+		\item $A \times (B \cup C) = (A \times B) \cup (A \times C)$,
+		%
+		\item $A \times (B \cap C) = (A \times B) \cap (A \times C)$.
+	\end{itemize}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 3.} Soient $A$ et $B$ deux ensembles. Montrer que
+	$A \subset B \iff A \setminus B = \emptyset$
+		
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 4.} (Formules d'associativité). Soit $E$ un
+	ensemble, $(A_i)_{i \in I}$ une famille de $\mathcal{P}(E)$ et
+	$(J_k)_{k \in K}$ une famille incluse dans $I$ et recouvrant $I$.
+	Montrer que
+	
+	\[
+		\bigcup\limits_{i \in I} A_i =
+			\bigcup\limits_{k \in K}\bigcup\limits_{i \in J_k} A_i
+		\quad \text{et} \quad
+		\bigcap\limits_{i \in I} A_i =
+			\bigcap\limits_{k \in K}\bigcap\limits_{i \in J_k} A_i
+	\]
+	
+	\vspace{5mm}
+	\noindent
+	{\color{red}\textbf{Exercice 5.}}
+	Soient $A$ et $B$ deux parties de $E$.\\
+	Discuter et résoudre l'équation d'inconnue $X \subset E$ donnée par
+	
+	\[(A \cap X) \cup (B \cap X^c) = \emptyset\]
+	
+\end{document}
