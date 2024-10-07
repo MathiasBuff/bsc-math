@@ -132,17 +132,23 @@
 	Alors toute sous-famille $\{v_i\}_{i \in I}$ indexée par 
 	$I \subset \{1, \dotsc, n\}$ est aussi libre.\\
 	
-	\includegraphics{ex03.jpg}
-	
 	\colorbox{solution}
 	{
 		\begin{minipage}{0.9\textwidth}
 			Si $\{v_1, \dotsc, v_n\}$ est libre, alors pour tout
 			$v_k, k \in K = \{1, \dotsc, n\}$, il est impossible de
 			représenter $v_k$ comme combinaison linéaire des vecteurs
-			de $\{v_1, \dotsc, v_n\} \setminus \{v_k\}$.
+			de $\{v_1, \dotsc, v_n\} \setminus \{v_k\}$.\\
 			
-			En particulier, 
+			En particulier, il est impossible de représenter $v_k$
+			comme combinaison linéaire des vecteurs de n'importe quelle
+			sous-famille de $\{v_1, \dotsc, v_n\} \setminus \{v_k\}$.\\
+			
+			Ainsi, pour tout $v_k$, une sous-famille $\{v_i\}_{i \in I},
+			I \subset K$ contenant $v_k$ est libre. Comme $v_k$ peut
+			être n'importe quel vecteur de $\{v_1, \dotsc, v_n\}$, on
+			en conclut que toute sous-famille de $\{v_1, \dotsc, v_n\}$:
+			$\{v_i\}_{i \in I}, I \subset \{1, \dotsc, n\}$ est libre.
 		\end{minipage}
 	}
 	
@@ -163,8 +169,47 @@
 		\item Montrer que $\dim_{\mathbb{C}}(\mathbb{C}) = 1$.
 		En déduire $\dim_{\mathbb{C}}(\mathbb{C}^n)$.
 	\end{enumerate}
-	
-	\includegraphics{ex04.jpg}
+		
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			\begin{enumerate}[label=(\alph*)]
+				\item - $\{1\}$ est une base de $\mathbb{R}$ sur
+				$\mathbb{R}$, car $\forall v \in \mathbb{R},
+					\exists! \lambda \in \mathbb{R},
+					v = \lambda \cdot 1$.\\
+				\phantom{- }Comme $\{1\}$ possède 1 élément,
+				$\dim_{\mathbb{R}}(\mathbb{R}) = \card(\{1\}) = 1$
+				
+				- $\{1, i\}$ est une base de $\mathbb{C}$ sur
+				$\mathbb{R}$, car $\forall v \in \mathbb{C},
+				\exists! a \in \mathbb{R}, \exists! b \in \mathbb{R},
+				v = a \cdot 1 + b \cdot i$.\\
+				\phantom{- }Comme $\{1, i\}$ possède 2 éléments,
+				$\dim_{\mathbb{R}}(\mathbb{C}) = \card(\{1, i\}) = 2$
+				%
+				\vspace{10pt}
+				%
+				\item - Puisqu'un vecteur de $\mathbb{R}^n$ est un
+				n-uplet de vecteurs de $\mathbb{R}$, il peut être
+				représenté comme\\
+				\phantom{- }n vecteurs de $\mathbb{R}$ indépendants,
+				et donc $\dim_{\mathbb{R}}(\mathbb{R}^n)
+				= n \cdot \dim_{\mathbb{R}}(\mathbb{R}) = n \cdot 1 = n$.
+				
+				- Par le même raisonnement, $\dim_{\mathbb{R}}(\mathbb{C}^n)
+				= n \cdot \dim_{\mathbb{R}}(\mathbb{C}) = n \cdot 2 = 2n$.
+				%
+				\item  $\{1\}$ est une base de $\mathbb{C}$ sur
+				$\mathbb{C}$, car $\forall v \in \mathbb{C},
+				\exists! z \in \mathbb{C}, v = z \cdot 1$.\\
+				Donc, $\dim_{\mathbb{C}}(\mathbb{C}) = 1$ et
+				$\dim_{\mathbb{C}}(\mathbb{C}^n)
+					= n \cdot \dim_{\mathbb{C}}(\mathbb{C}^n)
+					= n \cdot 1 = n$.
+			\end{enumerate}
+		\end{minipage}
+	}
 	
 	\newpage
 	
