@@ -65,54 +65,94 @@
 	$f : e \to F$ une fonction bijective et monotone. Est-ce que
 	$f^{-1}$ est monotone ?
 	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			Comme $f$ est bijective, elle est injective, donc
+			strictement monotone.
+			
+			Sans perte de généralité, pour tou $x, x' \in E,
+				x < x' \implies f(x) < f(x')$.\\
+			
+			Prenons $y, y' \in F$ tels que $y = f(x)$ et $y' = f(x')$.\\
+			Comme la fonction inverse de $f$, $f^{-1}$ est bijective
+			alors $x = f^{-1}(y)$ et $x' = f^{-1}(y')$.\\
+			
+			Donc, $f^{-1}(y) < f^{-1}(y') \implies y < y'$ et par
+			contraposée, $y \geq y' \implies f^{-1}(y) \geq f^{-1}(y')$.\\
+			Par conséquent, $f^{-1}$ est (strictement) monotone.
+		\end{minipage}
+	}
+	
 	\vspace{5mm}
 	\noindent
 	\textbf{Exercice 2.} Les fonctions suivantes sont-elles bien
 	définies ? injectives ? surjectives ? bijectives ?
 	
 	\begin{enumerate}[label=(\roman*)]
-		\item $\begin{aligned}
-			a :\ & \mathbb{N} &&\to &&\mathbb{N}\\
-			&n &&\mapsto &&n + 1
-		\end{aligned}$
+		\item $a : \mathbb{N} \to \mathbb{N}\\
+			\phantom{a :\ } n \mapsto n + 1$
 		%
 		\vspace{5pt}
 		%
-		\item $\begin{aligned}
-			b :\ & \mathbb{R} &&\to &&\mathbb{R}\\
-			&x &&\mapsto &&2x
-		\end{aligned}$
+		\item $b : \mathbb{R} \to \mathbb{R}\\
+			\phantom{b :\ } x \mapsto 2x$
 		%
 		\vspace{5pt}
 		%
-		\item $\begin{aligned}
-			c :\ & [0, \infty) &&\to &&(-\infty, 0]\\
-			&x &&\mapsto &&x^2
-		\end{aligned}$
+		\item $c : [0, \infty) \to (-\infty, 0]\\
+			\phantom{c :\ } x \mapsto x^2$
 		%
 		\vspace{5pt}
 		%
-		\item $\begin{aligned}
-			d :\ & \mathbb{N} &&\to &&\{-1, 1\}\\
-		&n &&\mapsto &&\left\{\begin{aligned}
-			&1 & &\text{si}\ n\ \text{est pair},\\
-			-&1 & &\text{si}\ n\ \text{est impair}
-		\end{aligned}\right.\end{aligned}$
+		\item $d : \mathbb{N} \to \{-1, 1\}\\
+			\phantom{d :\ } n \mapsto
+			\left\{\begin{aligned}
+				&1 & &\text{si}\ n\ \text{est pair},\\
+				-&1 & &\text{si}\ n\ \text{est impair}
+			\end{aligned}\right.$
 		%
 		\vspace{5pt}
 		%
-		\item $\begin{aligned}
-			e :\ & \mathbb{N} &&\to &&\{-1, 1\}\\
-			&n &&\mapsto &&(-1)^n
-		\end{aligned}$
+		\item $e : \mathbb{N} \to \{-1, 1\}\\
+			\phantom{e :\ } n \mapsto (-1)^n$
 	\end{enumerate}
 	
-	\vspace{5mm}
+	\includegraphics{ex02.jpg}
+	
+	\vspace{5mm}	
 	\noindent
 	\textbf{Exercice 3.} Soit $E \subset \mathbb{R}$. Montrer que
 	$\sup{E}$, s'il existe, est unique.
 	
-	\vspace{5mm}
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			Soit $E \subset \mathbb{R}$, muni d'un supremum noté
+			$\sup{E}$.\\
+			Supposons un deuxième supremum de $E$, noté $\sup'{E}$.
+			Alors $\sup'{E}$ est un majorant de $E$, et comme pour
+			tout majorant $M$ de $E$, $\sup{E} \leq M$, alors
+			$\sup{E} \leq \sup'{E}$.\\
+			
+			De la même manière, comme $\sup{E}$ est un majorant de $E$,
+			$\sup'{E} \leq \sup{E}$.\\
+			Comme $\sup{E} \leq \sup'{E}$ et $\sup'{E} \leq \sup{E}$,
+			$\sup{E} = \sup'{E}$.
+		\end{minipage}
+	}
+	
+	\newpage
+	
+	\fancyhf{}
+	\renewcommand{\headrule}
+	{\rule{\textwidth}{0pt}}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
 	\noindent
 	\textbf{Exercice 4.} Trouver le supremum et infimum dans $\mathbb{R}$
 	de :
@@ -123,6 +163,10 @@
 			\text{ou}\ 2 \leq x + 1 < 6\}$	
 	\end{enumerate}
 	Est-ce que ce sont des maximums et des minimums ?
+	
+	\includegraphics{ex04-p1.jpg}
+	
+	\includegraphics{ex04-p2.jpg}
 	
 	\vspace{5mm}
 	\noindent
@@ -145,6 +189,8 @@
 		\end{aligned}\]
 		où $\chi_A$ est la fonction caractéristique de l'ensemble $A$.
 	\end{enumerate}
+	
+	\includegraphics{ex05.jpg}
 	
 	\vspace{5mm}
 	\noindent
@@ -170,17 +216,24 @@
 		premiers inférieurs ou égaux à $n$.
 	\end{enumerate}
 	
+	\includegraphics{ex06.jpg}
+	
 	\vspace{5mm}
 	\noindent
 	\textbf{Exercice 7.} Soient $E \subset F \subset \mathbb{R}$.
 	Montrer que $\sup{E} \leq \sup{F}$ et $\inf{E} \geq \inf{F}$.
+	
+	\includegraphics{ex07.jpg}
 		
-	\vspace{5mm}
+	\newpage
+	
 	\noindent
 	\textbf{Exercice 8.} Soit $f : E \to F$. Montrer que
 	\[
 		E = \bigcup\limits_{y \in F} f^{-1}(\{y\})
 	\]
+	
+	\includegraphics{ex08.jpg}
 	
 	\vspace{5mm}
 	\noindent
@@ -199,13 +252,6 @@
 	Pour chaque question, si la réponse est oui, le prouver.
 	Sinon, exhiber un contre-exemple.
 	
-	\fancyhf{}
-	\renewcommand{\headrule}
-	{\rule{\textwidth}{0pt}}
-	\fancyfoot[R]{
-		\small Page \thepage
-		\hspace{1pt} /
-		\pageref*{LastPage}
-	}
+	\includegraphics{ex09.jpg}
 	
 \end{document}
