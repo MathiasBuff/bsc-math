@@ -1,0 +1,269 @@
+% !TeX spellcheck = fr_FR
+
+% TODO: Replace scan images with clean text where possible
+
+\documentclass[a4paper, 10pt]{report}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amssymb, amsfonts}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage{enumitem}
+
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=35mm,
+	bottom=25mm,
+	headsep=5mm,
+	headheight=20mm,
+}
+
+\definecolor{solution}{HTML}{E5E4E2}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\begin{document}
+	
+	\renewcommand{\headrule}{%
+		\vspace{-4pt}\hrulefill
+		\raisebox{-6.8pt}{\ \includegraphics[height=5mm]{../../icon.png}}
+		\hrulefill
+	}	
+	\pagestyle{fancy}
+	\fancyhf{}
+	
+	\fancyhead[L]{\small \slshape Automne 2024}
+	\fancyhead[C]{\Large \bfseries Logique et Théorie des Ensembles\\
+		Série 04-B}
+	\fancyhead[R]{\small Buff Mathias}
+	\fancyfoot[L]{
+		\small Source files available at:
+		\href{https://github.com/MathiasBuff/bsc-math}
+		{github.com/MathiasBuff/bsc-math}
+	}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+	\noindent
+	\textbf{Exercice 1.} Montrer que $(A \implies B) \implies
+		\big[\ (C \implies A) \implies (C \implies B)\ \big]$.
+	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			Par table de vérité, avec $\bigstar := (A \implies B) \implies
+				\big[\ (C \implies A) \implies (C \implies B)\ \big]$:
+			\begin{center}\begin{tabular}{c|c|c|c|c|c|c|c}
+				$A$ & $B$ & $C$ &
+				$A \Rightarrow B$ & $C \Rightarrow A$ & $C \Rightarrow B$
+				& $(C \Rightarrow A) \Rightarrow (C \Rightarrow B)$ &
+				$\bigstar$\\
+				\hline&&&&&&&\\
+				V & V & V & V & V & V & V & V \\
+				V & V & F & V & V & V & V & V \\
+				V & F & V & F & V & F & F & V \\
+				V & F & F & F & V & V & V & V \\
+				F & V & V & V & F & V & V & V \\
+				F & V & F & V & V & V & V & V \\
+				F & F & V & V & F & F & V & V \\
+				F & F & F & V & V & V & V & V \\
+			\end{tabular}\end{center}
+			On constate donc que $\bigstar$ est VRAIE pour n'importe
+			quelle valeur logique de $A, B, C$.
+		\end{minipage}
+	}
+		
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 2.}  Les assertions $A \implies (B \implies C)$ et
+	$(A \implies B) \implies C$ sont-elles équivalentes ?
+	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			\textit{\color{blue} La démonstration est directe avec une
+				table de vérité, mais j'aimerais bien essayer une autre
+				approche:}\\
+			
+			En utilisant $(X \implies Y) \iff (X \land Y) \lor \lnot X$:
+			\[\begin{aligned}
+				[A \implies (B \implies C)]
+				&\iff (A \land ((B \land C) \lor \lnot C)) \lor \lnot A \\
+				&\iff ((A \land (B \land C)) 
+					\lor (A \land \lnot C)) \lor \lnot A \\
+				&\iff (A \land B \land C) 
+					\lor (A \land \lnot C) \lor \lnot A \\
+				\\
+				[(A \implies B) \implies C]
+				&\iff (((A \land B) \lor \lnot A) \land C)
+					\lor \lnot ((A \land B) \lor \lnot A) \\
+				&\iff  (((A \land B) \lor \lnot A) \land C)
+					\lor ((\lnot A \lor \lnot B) \land A) \\
+				&\iff (((A \land B)\land C) \lor (\lnot A \land C))
+					\lor ((\lnot A \land A) \lor (\lnot B \land A)) \\
+				&\iff (A \land B\land C) \lor (\lnot A \land C)
+					\lor (\lnot B \land A)
+			\end{aligned}\]
+		Comme $[(A \land \lnot C) \lor \lnot A]
+			\nLeftrightarrow [(\lnot A \land C) \lor (\lnot B \land A)]$,
+		on peut conclure que les deux assertions ne sont pas équivalentes.
+		\end{minipage}
+	}
+		
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 3.} Quelle est la contraposée des implications
+	suivantes ?\\
+	Même question avec la négation.
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item $p$ divise $ab$ implique ($p$ divise $a$ ou $p$ divise $b$)
+		%
+		\item $E \neq \emptyset$ implique qu'il existe $a$ tel que
+		$a = \min(E)$
+		%
+		\item Si $f$ est continue et si $I$ est un segment, alors $f$ est
+		bornée sur $I$
+	\end{enumerate}
+	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			\begin{enumerate}[label=\arabic*.]
+				\item Contraposée : ($p$ ne divise ni $a$ ni $b$) 
+				implique $p$ ne divise pas $ab$\\
+				Négation :  $p$ divise $ab$
+					et ($p$ ne divise ni $a$ ni $b$)
+				%
+				\item Contraposée :  Il n'existe aucun $a$ tel que
+					$a = \min(E)$ implique que $E = \emptyset$\\
+				Négation : $E \neq \emptyset$
+					et il n'existe aucun $a$ tel que $a = \min(E)$
+				%
+				\item Contraposée : Si $f$ n'est pas bornée sur $I$,
+					alors $f$ n'est pas continue
+					ou $I$ n'est pas un segment\\
+				Négation : $f$ est continue et $I$ est un segment,
+					mais $f$ n'est pas bornée sur $I$
+			\end{enumerate}
+		\end{minipage}
+	}
+	
+	\newpage
+	
+	\fancyhf{}
+	\renewcommand{\headrule}
+	{\rule{\textwidth}{0pt}}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+	\noindent
+	\textbf{Exercice 4.} 
+	À la fin du semestre, Sofia, Corentin et Pierre sont tellement soulagés que ce soit terminé qu’ils décident de fêter cela en se faisant tatouer.\\
+	Quand ils arrivent à l’atelier, il reste cinq tatouages temporaires : trois marmottes et deux serpents.\\
+	Ils ferment les yeux et le tatoueur choisit au hasard un motif pour chacun, qu’il place sur leurs fronts. En sortant du magasin, les trois ouvrent les yeux (chacun découvre donc le tatouage des deux autres, sans savoir ce qu’il a lui-même).\\
+	\indent Sofia dit : “Impossible de savoir quel tatouage j’ai”.\\
+	\indent Corentin réfléchit : “Je ne peux pas non plus déduire ce que j’ai sur le front”.\\
+	\indent Pierre déclare, sans même regarder les deux autres : “Je suis donc certain de mon tatouage”.\\
+	Quel est le tatouage de Pierre ? Justifier.
+	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			Pour la lisibilité, posons les propositions suivantes:
+			\begin{itemize}[label=]
+				\item $S_s$ := "Sofia a un tatouage de serpent",
+				\item $C_s$ := "Corentin a un tatouage de serpent",
+				\item $P_s$ := "Pierre a un tatouage de serpent",
+			\end{itemize}
+			Par les conditions de l'énoncé, si une de ces propositions est FAUSSE, alors le tatouage de la personne est une marmotte.\\
+			
+			Lors de l'observation de Sofia, le tatouage de Sofia serait certain si Corentin et Pierre étaient tatoués tous les deux d'un serpent. En effet, comme l'atelier ne disposait que de	deux tatouages de serpent,
+			\[C_s \land P_s \implies \lnot S_s\]
+			Comme Sofia est incertaine, au moins un des deux est tatoué d'une marmotte.
+			\[\lnot(C_s \land P_s) \iff \lnot C_s \lor \lnot P_s\]
+			Puisque Corentin est conscient de ce fait, il serait donc certain d'être tatoué d'une marmotte s'il voyait Pierre avec un serpent, car
+			\[(\lnot C_s \lor \lnot P_s) \land P_s \iff \lnot C_s\]
+			L'incertitude de Corentin implique donc $\lnot P_s$, et c'est par	ce même raisonnement que Pierre peut déduire qu'il est \underline{tatoué d'une marmotte}.
+		\end{minipage}
+	}
+	
+	\vspace{5mm}
+	\noindent
+	{\color{red}\textbf{Exercice 5.}}
+	On considère le connecteur logique de Sheffer $\lozenge$ défini par\\
+	$A \lozenge B = \lnot (A \lor B)$.
+	Exprimer $\lnot, \lor, \land, \implies$ en terme du connecteur
+	$\lozenge$ uniquement.
+	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+		{\color{blue}
+			\textit{Au passage, est-ce que le connecteur de Sheffer
+			n'est pas NAND, noté $|$ ou $\uparrow$,\\
+			plutôt que le NOR introduit ici ?}
+		}\\
+		
+		$\lnot A = \lnot A \land \lnot A
+				= \lnot(A \lor A) = A \lozenge A$ \\
+			
+		$A \lor B = \lnot (\lnot (A \lor B)) = \lnot (A \lozenge B)
+				= (A \lozenge B)\ \lozenge\ (A \lozenge B)$ \\
+		
+		$A \land B = \lnot (\lnot A \lor \lnot B)
+			= \lnot A \lozenge \lnot B
+			= (A \lozenge A)\ \lozenge\ (B \lozenge B)$ \\
+		
+		$A \implies B = (A \land B) \lor \lnot A
+			= (A \lozenge A)\ \lozenge\ (B \lozenge B) \lor (A \lozenge A)
+			\\ = [(A \lozenge A)\ \lozenge\ (B \lozenge B)\
+			\lozenge\ (A \lozenge A)]\ \lozenge\
+			[(A \lozenge A)\ \lozenge\ (B \lozenge B)\
+			\lozenge\ (A \lozenge A)]$\\
+		
+		{\color{blue}
+		\textit{Et puisqu'il reste de la place sur la page,
+		amusons-nous à continuer :}\\
+		
+		$A \iff B = (A \land B) \lor (\lnot A \land \lnot B)
+			= (A \land B) \lor \lnot(A \lor B)
+			= ((A \lozenge A)\ \lozenge\ (B \lozenge B)) \lor (A \lozenge B)
+			\\ = [((A \lozenge A)\ \lozenge\ (B \lozenge B))\
+				\lozenge\ (A \lozenge B)]\ \lozenge\
+			[((A \lozenge A)\ \lozenge\ (B \lozenge B))\
+			\lozenge\ (A \lozenge B)]$\\
+			
+		$A \oplus B = (A \land \lnot B) \lor (\lnot A \land B)
+			= \lnot(\lnot A \lor B) \lor \lnot(A \lor \lnot B)
+			= (\lnot A \lozenge B) \lor (A \lozenge \lnot B) \\
+			= ((A \lozenge A)\ \lozenge\ B) \lor
+				(A\ \lozenge\ (B \lozenge B))
+			= [((A \lozenge A)\ \lozenge\ B)\
+				\lozenge\ (A\ \lozenge\ (B \lozenge B)]\
+			\lozenge\
+			[((A \lozenge A)\ \lozenge\ B)\
+				\lozenge\ (A\ \lozenge\ (B \lozenge B)]$
+		}
+		\end{minipage}
+	}
+	
+\end{document}
