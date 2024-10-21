@@ -1,0 +1,256 @@
+% !TeX spellcheck = fr_FR
+
+% TODO: Replace scan images with clean text where possible
+
+\documentclass[a4paper, 10pt]{report}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amssymb, amsfonts}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage{enumitem}
+
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=35mm,
+	bottom=25mm,
+	headsep=5mm,
+	headheight=20mm,
+}
+
+\definecolor{solution}{HTML}{E5E4E2}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+
+\begin{document}
+	
+	\renewcommand{\headrule}{%
+		\vspace{-4pt}\hrulefill
+		\raisebox{-6.8pt}{\ \includegraphics[height=5mm]{../../icon.png}}
+		\hrulefill
+	}	
+	\pagestyle{fancy}
+	\fancyhf{}
+	
+	\fancyhead[L]{\small \slshape Automne 2024}
+	\fancyhead[C]{\Large \bfseries Logique et Théorie des Ensembles\\
+		Série 05-B}
+	\fancyhead[R]{\small Buff Mathias}
+	\fancyfoot[L]{
+		\small Source files available at:
+		\href{https://github.com/MathiasBuff/bsc-math}
+		{github.com/MathiasBuff/bsc-math}
+	}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+	\noindent
+	\textbf{Exercice 1.} Nier la proposition : "Tous les étudiants
+	de la faculté des Sciences qui ont les yeux marron auront 6 à
+	tous leurs examens et prendront leur retraite avant 50 ans."
+	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			"Il existe un étudiant de la faculté des Sciences qui a
+			les yeux marron et qui n'aura pas 6 à un de ses examens
+			ou qui prendra sa retraite après 50 ans."\\
+			\textit{\color{blue} (C'est sûrement Philippe)}
+		\end{minipage}
+	}
+		
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 2.} Les assertions suivantes sont-elles vraies
+	ou fausses ? Donner leur négation.
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item $\exists x \in \mathbb{R}, \forall y \in \mathbb{R},
+			x + y > 0$
+		%
+		\item $\forall x \in \mathbb{R}, \exists y \in \mathbb{R},
+			x + y > 0$
+		%
+		\item $\forall x \in \mathbb{R}, \forall y \in \mathbb{R},
+			x + y > 0$
+		%
+		\item $\exists x \in \mathbb{R}, \exists y \in \mathbb{R},
+			x + y > 0$
+	\end{enumerate}
+	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			\begin{enumerate}[label=\arabic*.]
+				\item FAUSSE.\\ Négation : $\forall x \in \mathbb{R},
+					\exists y \in \mathbb{R}, x + y \leq 0$
+				%
+				\item VRAIE.\\ Négation : $\exists x \in \mathbb{R},
+					\forall y \in \mathbb{R}, x + y \leq 0$
+				%
+				\item FAUSSE.\\ Négation : $\exists x \in \mathbb{R},
+					\exists y \in \mathbb{R}, x + y \leq 0$
+				%
+				\item VRAIE.\\ Négation : $\forall x \in \mathbb{R},
+					\forall y \in \mathbb{R}, x + y \leq 0$
+			\end{enumerate}
+		\end{minipage}
+	}
+		
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 3.} Écrire la négation des assertions suivantes :
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item $\forall x, y \in E, xy = yx$
+		%
+		\item $\exists x \in E, \forall y \in E, xy = yx$
+		%
+		\item $\forall a, b \in A, [ab = 0 \implies
+			(a = 0\ \text{ou}\ b = 0)]$
+		%
+		\item $\forall x \in \mathbb{R}, \forall y \in \mathbb{R},
+			[x < y \implies f(x) < f(y)]$
+		%
+		\item $\forall \varepsilon > 0, \exists N \in \mathbb{N},
+			[n \geq N \implies \abs{u_n - \ell} < \varepsilon]$
+		%
+		\item $\exists \ell \in \mathbb{R}, \forall \varepsilon > 0,
+			\exists N \in \mathbb{N},
+			[n \geq N \implies \abs{u_n - \ell} < \varepsilon]$
+	\end{enumerate}
+	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			\begin{enumerate}[label=\arabic*.]
+				\item $\exists x, y \in E, xy \neq yx$
+				%
+				\item $\forall x \in E, \exists y \in E, xy \neq yx$
+				%
+				\item $\exists a, b \in A, [ab = 0\ \text{et}\
+					(a \neq 0\ \text{et}\ b \neq 0)]$
+				%
+				\item $\exists x \in \mathbb{R}, \exists y \in \mathbb{R},
+					[x < y\ \text{et}\ f(x) \geq f(y)]$
+				%
+				\item $\exists \varepsilon > 0, \forall N \in \mathbb{N},
+					[n \geq N\ \text{et}\ \abs{u_n - \ell} \geq \varepsilon]$
+				%
+				\item $\forall \ell \in \mathbb{R},
+					\exists \varepsilon > 0, \forall N \in \mathbb{N},
+					[n \geq N\ \text{et}\ \abs{u_n - \ell} \geq \varepsilon]$
+			\end{enumerate}
+		\end{minipage}
+	}
+	
+	\newpage
+	
+	\fancyhf{}
+	\renewcommand{\headrule}
+	{\rule{\textwidth}{0pt}}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+	\noindent
+	\textbf{Exercice 4.} Expliquer verbalement ce que signifient les
+	assertions suivantes et écrire leur négation.
+	
+	\begin{enumerate}[label=\arabic*.]
+		\item $\forall n \geq 0, u_n < u_{n+1}$
+		(où $(u_n)$ est une suite réelle)
+		%
+		\item Soit $f: E \to \mathbb{R}$ une fonction :
+		\begin{enumerate}[label=(\alph*)]
+			\item $\exists C \in \mathbb{R}, \forall x \in E,
+				f(x) = C$
+			%
+			\item $\forall x \in E,
+				[f(x) = 0 \implies x = 0]$
+			%
+			\item $\forall y \in \mathbb{R}, \exists x \in E,
+				f(x) = y$
+			%
+			\item $\forall x \in E, \forall y \in E,
+				[f(x) = f(y) \implies x = y]$
+			%
+			\item $\exists A \in \mathbb{R}, \forall x \in E,
+				f(x) \leq A$
+		\end{enumerate}
+	\end{enumerate}
+	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			\begin{enumerate}[label=\arabic*.]
+				\item "$(u_n)$ es strictement croissante"\\
+				Négation : $\exists n \geq 0, u_n \geq u_{n+1}$
+				%
+				\item
+				\begin{enumerate}[label=(\alph*)]
+					\item "$f$ est constante (en $C$)"\\
+					Négation : $\forall C \in \mathbb{R}, \exists x \in E,
+						f(x) \neq C$
+					%
+					\item "$f(x) = 0$ uniquement pour $x = 0$"\\
+					Négation : $\exists x \in E,
+						[f(x) = 0\ \text{et}\ x \neq 0]$
+					%
+					\item "$f$ est surjective"\\
+					Négation : $\exists y \in \mathbb{R}, \forall x \in E,
+						f(x) \neq y$
+					%
+					\item "$f$ est injective"\\
+					Négation : $\exists x \in E, \exists y \in E,
+						[f(x) = f(y)\ \text{et}\ x \neq y]$
+					%
+					\item "$f$ est majorée (par $A$)"\\
+					Négation : $\forall A \in \mathbb{R}, \exists x \in E,
+						f(x) > A$
+				\end{enumerate}
+			\end{enumerate}
+		\end{minipage}
+	}
+	
+	\vspace{5mm}
+	\noindent
+	{\color{red}\textbf{Exercice 5.}}
+	Soit $E$ un ensemble et $P(x)$ des prédicats indexés par $x \in E$.
+	Écrire l'assertion $\exists! x \in E, P(x)$ à l'aide des
+	quantificateurs $\exists$ et $\forall$. Puis écrire la négation de
+	cette assertion.
+	
+	\colorbox{solution}
+	{
+		\begin{minipage}{0.9\textwidth}
+			$\exists! x \in E, P(x)$ : \textit{Il existe un $x$ pour lequel
+			$P(x)$ sont vrais, et ce $x$ est unique}\\ 
+			$\iff \exists x \in E, P(x)\ \text{et}\
+				[\forall y \in E, P(y) \implies x = y]$\\
+				
+			Négation : \textit{Soit il n'existe aucun $x$ pour lequel
+			$P(x)$ sont vrais, soit $x$ n'est pas unique}\\
+			$\iff \forall x \in E, \lnot P(x)\ \text{ou}\
+				[\exists y \in E, P(y)\ \text{et}\ x = y]$
+		\end{minipage}
+	}
+	
+\end{document}
