@@ -1,0 +1,219 @@
+% !TeX spellcheck = fr_FR
+
+% TODO: Replace scan images with clean text where possible
+
+\documentclass[a4paper, 10pt]{report}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amssymb, amsfonts}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage{enumitem}
+
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=35mm,
+	bottom=25mm,
+	headsep=5mm,
+	headheight=20mm,
+}
+
+\definecolor{solution}{HTML}{E5E4E2}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\card}{card}
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+	\hskip -\arraycolsep
+	\let\@ifnextchar\new@ifnextchar
+	\array{#1}}
+\makeatother
+
+\begin{document}
+	
+	\renewcommand{\headrule}{%
+		\vspace{-4pt}\hrulefill
+		\raisebox{-6.8pt}{\ \includegraphics[height=5mm]{../../icon.png}}
+		\hrulefill
+	}	
+	\pagestyle{fancy}
+	\fancyhf{}
+	
+	\fancyhead[L]{\small \slshape Automne 2024}
+	\fancyhead[C]{\Large \bfseries Algèbre I - Série 06}
+	\fancyhead[R]{\small Buff Mathias}
+	\fancyfoot[L]{
+		\small Source files available at:
+		\href{https://github.com/MathiasBuff/bsc-math}
+		{github.com/MathiasBuff/bsc-math}
+	}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+
+	\noindent
+	\textbf{Exercice 1.} (Exemples d'applications linéaires)\\
+	Prouver si ces applications sont linéaires ou non. Si oui, décrire
+	le noyau et l'image, et en donner des bases. Discuter de
+	l'injectivité et du rang de ces fonctions.
+	\begin{enumerate}[label=\arabic*.]
+		\item (Sur $\mathbb{R}$)
+		\[f_1: \begin{aligned}
+			&\mathbb{R}^3 &\to& \quad \mathbb{R}^3\\
+			&(x, y, z) &\mapsto&\quad (x+2y-3z, 7x+6y-13z, -2x+4y-2z)
+		\end{aligned}\]
+		%
+		\item (Sur $\mathbb{R}$)
+		\[f_2: \begin{aligned}
+			&\mathbb{C} &\to& \quad \mathbb{C}\\
+			&z &\mapsto&\quad -\tfrac{1}{2}\bar{z}
+		\end{aligned}\]
+		%
+		\item (Sur $\mathbb{C}$)
+		\[f_3: \begin{aligned}
+			&\mathbb{C} &\to& \quad \mathbb{C}\\
+			&z &\mapsto&\quad -\tfrac{1}{2}\bar{z}
+		\end{aligned}\]
+		%
+		\item (Sur $\mathbb{R}$)
+		\[f_4: \begin{aligned}
+			&\mathbb{R}_n[x] &\to& \quad \mathbb{R}_n[x]\\
+			&p(x) &\mapsto&\quad p(x+1)
+		\end{aligned}\]
+		%
+		\item (Sur $\mathbb{R}$)
+		\[f_5: \begin{aligned}
+				&\mathbb{R}_n[x] &\to& \quad \mathbb{R}_n[x]\\
+			&p(x) &\mapsto&\quad p(x)+1
+		\end{aligned}\]
+		%
+		\item (Sur $\mathbb{R}$)
+		\[f_6: \begin{aligned}
+			&\mathbb{R}_2[x] &\to& \quad \mathbb{R}^2\\
+			&p(x) &\mapsto&\quad (p(0), p'(0))
+		\end{aligned}\]
+		%
+		\item (Sur $\mathbb{R}$)
+		\[f_7: \begin{aligned}
+			&\mathbb{R}_2[x] &\to& \quad \mathbb{R}^3\\
+			&p(x) &\mapsto&\quad (p(0), p(1), p(2))
+		\end{aligned}\]
+	\end{enumerate}
+		
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 2.} (Une application linéaire particulière)
+	Soit $E$ un espace vectoriel de dimension finie $n$ sur un corps
+	$\mathbb{K}$, et $f: E \to E$ une application linéaire. Montrer que
+	les assertions suivantes sont équivalentes :
+	\begin{enumerate}[label=\arabic*.]
+		\item Ker($f$) = Im($f$)
+		%
+		\item $f \circ f = 0$ et $2 \cdot$rang($f$) = $n$
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 3.} (Somme d'applications linéaires)\\
+	Soient $f, g: V \to W$ des applications linéaires, où $V$ et $W$
+	sont des espaces vectoriels sur un corps $\mathbb{K}$.
+	\begin{enumerate}[label=\arabic*.]
+		\item Montrer que la somme
+		\[
+			f+g: \begin{aligned}
+				&V &\to& \quad W\\
+				&x &\mapsto&\quad f(x)+g(x)
+			\end{aligned}
+		\]
+		est une application linéaire.\\
+		\textit{Remarque : voir la Proposition 3.1.1.}
+		%
+		\item Montrer que Ker$(f)\ \cap$ Ker$(g) \subset$ Ker$(f+g)$.\\
+		L'inclusion dans l'autre sens est-elle vraie ? Si non, donner
+		un contre-exemple.
+		%
+		\item Montrer que Im$(f+g) \subset$ Im$(f)\ +$ Im$(g)$.\\
+		L'inclusion dans l'autre sens est-elle vraie ? Si non, donner
+		un contre-exemple.
+	\end{enumerate}
+	
+	\newpage
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 4.} (Base et application linéaire)\\
+	Soient $E$ un espace vectoriel de dimension finie $n$ sur un corps
+	$\mathbb{K}$, et $f: E \to E$ un endomorphisme tel que $f^n = 0$
+	et $f^{n-1} \neq 0$. Soit $x$ tel que $f^{n-1}(x) \neq 0$. Montrer
+	que la famille $\{x, f(X), f^2(x), \dotsc, f^{n-1}(x)\}$ est une
+	base de $E$.
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 5.} (Projection linéaire)\\
+	Soit $V$ un espace vectoriel sur un corps $\mathbb{K}$. Une
+	application linéaire $p: V <to V$ est appelée une \textit{projection}
+	si $p \circ p = p$ Il y a deux exemples de projections
+	\textit{triviales} : l'application identité et l'application nulle.
+	\begin{enumerate}[label=\arabic*.]
+		\item Pour $V = \mathbb{R}^2$ et $\mathbb{K} = \mathbb{R}$,
+		donner un exemple de projection qui n'est pas triviale.
+		%
+		\item Soit $p$ une projection. Montrer que Ker$(p)\ \cap$ Im$(p)
+			= \{0\}$.
+		%
+		\item Soit $p$ une projection. Montrer que Ker$(p)\ +$ Im$(p)
+			= V$.
+		%
+		\item Conclure que $V = $Ker$(p) \oplus\ $Im$(p)$. Quel est le
+		lien entre l'application $p$ et les les applications linéaires
+		P\textsubscript{Ker($p$)} et P\textsubscript{Im($p$)} introduites dans l'exemple 3.3.1(4) ?
+		%
+		\item Conclure que toute projection comme définie ci-dessus est de
+		type projection sur un sous-espace $U$ parallèlement à un
+		sous-espace $W$ où $W$ est complémentaire à $U$. 
+	\end{enumerate}
+	
+	\fancyhf{}
+	\renewcommand{\headrule}
+	{\rule{\textwidth}{0pt}}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+%	
+%	\colorbox{solution}
+%	{
+%		\begin{minipage}{0.9\textwidth}
+%			s
+%		\end{minipage}
+%	}
+%	
+%	\colorbox{solution}
+%	{
+%		\begin{minipage}{0.9\textwidth}
+%			\begin{enumerate}[label=(\alph*)]
+%				\item a
+%			\end{enumerate}
+%		\end{minipage}
+%	}
+	
+\end{document}

@@ -1,0 +1,194 @@
+% !TeX spellcheck = fr_FR
+
+% TODO: Replace scan images with clean text where possible
+
+\documentclass[a4paper, 10pt]{report}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath, amssymb, amsfonts}
+
+\usepackage{hyperref}
+\usepackage{geometry}
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage{enumitem}
+
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=35mm,
+	bottom=25mm,
+	headsep=5mm,
+	headheight=20mm,
+}
+
+\definecolor{solution}{HTML}{E5E4E2}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\card}{card}
+
+\begin{document}
+	
+	\renewcommand{\headrule}{%
+		\vspace{-4pt}\hrulefill
+		\raisebox{-6.8pt}{\ \includegraphics[height=5mm]{../../icon.png}}
+		\hrulefill
+	}	
+	\pagestyle{fancy}
+	\fancyhf{}
+	
+	\fancyhead[L]{\small \slshape Automne 2024}
+	\fancyhead[C]{\Large \bfseries Analyse I - Série 06}
+	\fancyhead[R]{\small Buff Mathias}
+	\fancyfoot[L]{
+		\small Source files available at:
+		\href{https://github.com/MathiasBuff/bsc-math}
+		{github.com/MathiasBuff/bsc-math}
+	}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+
+	\noindent
+	\textbf{Exercice 1.} Soit $E \subset \mathbb{R}$ et définissons
+	\[\overline{E}:= \{a \in \mathbb{R} : \exists (u_n) \in E^{\mathbb{N}}\
+		\text{convergeant vers}\ a\}\]
+	\begin{enumerate}[label=(\roman*)]
+		\item Montrer que $E \subset \overline{E}$
+		\item Montrer que $\overline{(0, 1)} = \overline{[0, 1]} = [0, 1]$
+		\item Montrer que $\overline{E}$ est l'ensemble des points de
+		$\mathbb{R}$ qui se situent à une distance arbitrairement proche
+		d'un point de $E$, c'est-à-dire
+		\[\overline{E}= \{a \in \mathbb{R} : \forall \varepsilon > 0,
+			\exists x \in E, \abs{a - x} < \varepsilon\}\]
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 2.} Étudier les points de continuité des fonctions
+	suivantes.
+	\begin{enumerate}[label=(\roman*)]
+		\item La fonction $f(x) = \frac{x-5}{x+3}$ de
+		$\mathbb{R}\setminus\{-3\}$ dans $\mathbb{R}$
+		%
+		\item La fonction $f(x) = x\chi_{\mathbb{Q}}(x)$ de
+		$\mathbb{R}$ dans $\mathbb{R}$
+		%
+		\item La fonction $f(x) =
+			\left\{\begin{aligned}
+				&\tfrac{x^2 + 2\abs{x}}{x} &\text{si}\ x \neq 0\\
+				&3						  &\text{si}\ x  =   0
+			\end{aligned}\right.$ de $\mathbb{R}$ dans $\mathbb{R}$
+			%
+		\item Soit $n \in \mathbb{N}^*$ impair. La fonction $f(x) =
+			\left\{\begin{aligned}
+				&\tfrac{x-1}{x^n-1} &\text{si}\ x \neq 1\\
+				&\tfrac{1}{n}		&\text{si}\ x  =   1
+			\end{aligned}\right.$ de $\mathbb{R}$ dans $\mathbb{R}$
+	\end{enumerate}
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 3.} (Théorème des suites alternées)\\
+	Soit $(u_n)$ une suite décroissante qui converge ver 0, et posons
+	$\displaystyle S_n = \sum_{k=0}^{n}(-1)^ku_k$.
+	\begin{enumerate}[label=(\roman*)]
+		\item Montrer que $(S_{2n})$ est décroissante et  $(S_{2n+1})$
+		croissante. En déduire que  $(S_n)$ converge.
+		%
+		\item Montrer que pour tout $m \geq n, \abs{S_n - S_m} \leq u_{n+1}$
+		(\textit{Indication :} utiliser le fait que $u_k - u_{k+1} \geq 0$).
+		En déduire que si $S = \lim S_n$, alors $\abs{S_n - S} \leq u_{n+1}$.
+		%
+		\item Montrer que la suite $\displaystyle
+			\sum_{k=1}^{n}\frac{(-1)^{k+1}}{k}$ converge.\\
+		(Vous montrerez durant le second semestre que la limite vaut
+		$\log2$.)
+	\end{enumerate}
+	
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 4.} Soit $g: [0, \infty) \to [0, \infty)$ une
+	fonction continue en 0 telle que $g(0) = 0$.\\
+	Soient $f: E \to \mathbb{R}$ et $a \in E$.
+	Montrer que $f$ est continue en $a$ si et seulement si
+	\[
+		\forall \varepsilon > 0, \exists \delta > 0, \forall x \in E,
+		\abs{x - a} < \delta \implies \abs{f(x) - f(a)} \leq g(\varepsilon)
+	\]
+		
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 5.} Soit $f : \mathbb{R} \to \mathbb{R}$
+	\begin{enumerate}[label=(\roman*)]
+		\item Montrer que si $f$ est continue sur $\mathbb{R}$, alors
+		$\abs{f}$ est continue.
+		%
+		\item Donner un exemple de fonction $f$ telle que $\abs{f}$ est
+		continue mais $f$ est discontinue en tout point. 
+		%
+		\item Exprimer $\max(x, y)$ et $\min(x, y)$ en utilisant la
+		valeur absolue.
+		%
+		\item Montrer que si $f$ et $g$ sont continues sur $\mathbb{R}$,
+		alors $\max(f, g)$ et $\min(f, g)$ sont également continues.
+	\end{enumerate}
+	
+	\newpage
+	
+	\vspace{5mm}
+	\noindent
+	\textbf{Exercice 6.} Soit $P$ un polynôme à coefficients réels de
+	degré impair. Montrer qu'il existe une racine $c \in \mathbb{R}$
+	telle que $P(c) = 0$ (\textit{Indication :} on peut utiliser le
+	théorème des valeurs intermédiaires). Pour tout $d \in \mathbb{N}$,
+	donner un exemple de polynôme de degré $2d$ qui n'admet pas de
+	racine sur $\mathbb{R}$.
+	
+	\vspace{5mm}	
+	\noindent
+	\textbf{Exercice 7.} (Théorème du point fixe)\\
+	Soit $f: [0, 1] \to [0, 1]$ continue. Montrer qu'il existe
+	$c \in [0, 1]$ tel que $f(c) = c$.\\
+	\textit{Indication :} utiliser le théorème des valeurs intermédiaires.	
+	
+	\fancyhf{}
+	\renewcommand{\headrule}
+	{\rule{\textwidth}{0pt}}
+	\fancyfoot[R]{
+		\small Page \thepage
+		\hspace{1pt} /
+		\pageref*{LastPage}
+	}
+	
+%	
+%	
+%	\colorbox{solution}
+%	{
+%		\begin{minipage}{0.9\textwidth}
+%			s
+%		\end{minipage}
+%	}
+%	
+%	\colorbox{solution}
+%	{
+%		\begin{minipage}{0.9\textwidth}
+%			\begin{enumerate}[label=(\alph*)]
+%				\item a
+%			\end{enumerate}
+%		\end{minipage}
+%	}
+	
+\end{document}
